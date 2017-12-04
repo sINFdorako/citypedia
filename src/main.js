@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue'
+import Meta from 'vue-meta'
 
+Vue.use(Meta)
 Vue.use(BootstrapVue);
 
 import 'bootstrap/dist/css/bootstrap.css'
