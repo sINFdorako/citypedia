@@ -1,4 +1,4 @@
-# citypedia
+# Citypedia
 > Based on Vue.js
 
 Citypedia will be the one and only homepage where you get all information about a certain city without reading through 100 lines of text and wikipedia articles.
