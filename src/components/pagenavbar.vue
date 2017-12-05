@@ -22,7 +22,6 @@
 
         <b-nav-form class="searchfunc">
           <b-form-input size="sm" position="center" class="mr-sm-2" type="text" placeholder="Search"/>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
         </b-nav-form>
 
         <b-nav-item-dropdown right>
@@ -124,5 +123,4 @@ export default {
     transform: scale(1) translate3d(0,0,0);
   }
 }
-
 </style>
