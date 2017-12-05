@@ -6,7 +6,7 @@
       <input id="myTextBox" class="input" type="text" v-model="city" placeholder="city">
       <br>
       <div>
-        <b-button :to="{ path: 'details/'+city }" class="button">go on</b-button>
+        <b-button :to="{ path: 'citydetails/'+city }" class="button">go on</b-button>
       </div>
     </div>
   </div>
