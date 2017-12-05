@@ -4,7 +4,9 @@
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-    <b-navbar-brand href="#">Citypedia</b-navbar-brand>
+
+    <b-navbar-brand id="navbrand" href="#"> </b-navbar-brand>
+
 
     <b-collapse is-nav id="nav_collapse">
 
@@ -45,15 +47,15 @@ export default {
 $(document).ready(function() {
 
   $(window).scroll(function () {
-      //if you hard code, then use console
-      //.log to determine when you want the
-      //nav bar to stick.
-      console.log($(window).scrollTop())
+
+  //    console.log($(window).scrollTop())
     if ($(window).scrollTop() > 280) {
       $('#nav_bar').addClass('navbar-fixed');
+      document.getElementById('navbrand').innerHTML = 'Citypedia';
     }
     if ($(window).scrollTop() < 281) {
       $('#nav_bar').removeClass('navbar-fixed');
+      document.getElementById('navbrand').innerHTML = '';
     }
   });
 });
