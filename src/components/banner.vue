@@ -42,5 +42,6 @@ export default {
   margin-bottom: 0px;
   background-image: url("../assets/background.png");
   height: 280px;
+  font-family: 'Montserrat', sans-serif;
 }
 </style>

@@ -33,4 +33,6 @@ export default {
 }
 
 
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 </style>

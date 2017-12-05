@@ -97,10 +97,11 @@ export default {
 .searchfunc{
   margin-left: 200pt;
 }
+
 .navbar-fixed {
-    top: 0;
+    top: 0px;
     z-index: 100;
-  position: fixed;
+    position: sticky;
     width: 100%;
 }
 
@@ -123,4 +124,5 @@ export default {
     transform: scale(1) translate3d(0,0,0);
   }
 }
+
 </style>
