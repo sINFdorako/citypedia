@@ -11,8 +11,9 @@
     <b-collapse is-nav id="nav_collapse">
 
       <b-navbar-nav>
-        <b-nav-item href="#">Home</b-nav-item>
+        <b-nav-item href="#">A-Z</b-nav-item>
         <b-nav-item href="#">Ranking</b-nav-item>
+        <b-nav-item href="#">About</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -26,7 +27,7 @@
         <b-nav-item-dropdown right>
           <!-- Using button-content slot -->
           <template slot="button-content">
-            <em>User</em>
+            <img id="usr" src="../assets/user.png">
           </template>
           <b-dropdown-item href="#">Profile</b-dropdown-item>
           <b-dropdown-item href="#">Signout</b-dropdown-item>
@@ -51,10 +52,12 @@ $(document).ready(function() {
   //    console.log($(window).scrollTop())
     if ($(window).scrollTop() > 280) {
       $('#nav_bar').addClass('navbar-fixed');
+      $('#navbrand').addClass('animationIn');
       document.getElementById('navbrand').innerHTML = 'Citypedia';
     }
     if ($(window).scrollTop() < 281) {
       $('#nav_bar').removeClass('navbar-fixed');
+      $('#navbrand').removeClass('animationIn');
       document.getElementById('navbrand').innerHTML = '';
     }
   });
@@ -65,6 +68,20 @@ $(document).ready(function() {
 
 
 <style scoped>
+
+.animationIn {
+  opacity: 0;
+  animation-name: bounceIn;
+  animation-duration: 450ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+#usr {
+  height: 32px;
+  width: auto;
+}
+
 .searchfunc{
   margin-left: 200pt;
 }
@@ -73,5 +90,25 @@ $(document).ready(function() {
     z-index: 100;
   position: fixed;
     width: 100%;
+}
+
+
+@keyframes bounceIn{
+  0%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
 }
 </style>
