@@ -1,6 +1,6 @@
 <template>
 
-  <b-navbar toggleable="md" type="dark" variant="dark">
+  <b-navbar id="nav_bar" toggleable="md" type="dark" variant="dark">
 
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -41,6 +41,22 @@
 export default {
   name: 'pagenavbar',
 }
+
+$(document).ready(function() {
+
+  $(window).scroll(function () {
+      //if you hard code, then use console
+      //.log to determine when you want the
+      //nav bar to stick.
+      console.log($(window).scrollTop())
+    if ($(window).scrollTop() > 280) {
+      $('#nav_bar').addClass('navbar-fixed');
+    }
+    if ($(window).scrollTop() < 281) {
+      $('#nav_bar').removeClass('navbar-fixed');
+    }
+  });
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -49,5 +65,11 @@ export default {
 <style scoped>
 .searchfunc{
   margin-left: 200pt;
+}
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  position: fixed;
+    width: 100%;
 }
 </style>
