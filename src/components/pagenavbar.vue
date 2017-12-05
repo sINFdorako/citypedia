@@ -5,7 +5,7 @@
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
 
-    <b-navbar-brand v-on:click="scrollTop" href="#"> </b-navbar-brand>
+    <b-navbar-brand id="navbrand" v-on:click="scrollTop" href="#"> </b-navbar-brand>
 
 
     <b-collapse is-nav id="nav_collapse">
@@ -57,12 +57,12 @@ export default {
       //    console.log($(window).scrollTop())
         if ($(window).scrollTop() > 280) {
           $('#nav_bar').addClass('navbar-fixed');
-          $('#navbrand').addClass('animationIn');
+          $('navbrand').addClass('animationIn');
           document.getElementById('navbrand').innerHTML = 'Citypedia';
         }
         if ($(window).scrollTop() < 281) {
           $('#nav_bar').removeClass('navbar-fixed');
-          $('#navbrand').removeClass('animationIn');
+          $('navbrand').removeClass('animationIn');
           document.getElementById('navbrand').innerHTML = '';
         }
       });
@@ -76,10 +76,6 @@ export default {
 
 
 <style scoped>
-
-.disable-select {
-  outline: none;
-}
 
 .animationIn {
   opacity: 0;
