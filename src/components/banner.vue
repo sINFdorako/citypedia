@@ -1,11 +1,8 @@
 <template>
   <div>
-    <b-jumbotron id="toptag">
+    <b-jumbotron class="unselectable" id="toptag">
       <template slot="header">
         Citypedia
-      </template>
-      <template slot="lead">
-        behind the skyline
       </template>
     </b-jumbotron>
   </div>

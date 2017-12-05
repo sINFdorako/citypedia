@@ -5,7 +5,7 @@
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
 
-    <b-navbar-brand v-on:click="scrollTop" href="#"> </b-navbar-brand>
+    <b-navbar-brand id="navbrand" v-on:click="scrollTop" href="#"> </b-navbar-brand>
 
 
     <b-collapse is-nav id="nav_collapse">
@@ -14,7 +14,6 @@
         <b-nav-item href="#">A-Z</b-nav-item>
         <b-nav-item href="#">Ranking</b-nav-item>
         <b-nav-item href="#">About</b-nav-item>
-        <b-nav-item :to="{ path: '/addcity' }">Add City</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
@@ -77,10 +76,6 @@ export default {
 
 
 <style scoped>
-
-.disable-select {
-  outline: none;
-}
 
 .animationIn {
   opacity: 0;
