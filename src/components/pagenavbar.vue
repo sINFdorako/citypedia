@@ -37,8 +37,6 @@
 
     </b-collapse>
   </b-navbar>
-
-  <!-- navbar-1.vue -->
 </template>
 
 <script>
@@ -46,8 +44,13 @@ export default {
   name: 'pagenavbar',
   methods: {
     scrollTop: function () {
-      $("html, body").animate({ scrollTop: 0 }, "slow");
+      if(document.location="/#/"){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      } else {
+        document.location.href = "/";
       }
+
+    }
 
   },
   created: function(){
