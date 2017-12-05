@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <banner/>
     <pagenavbar/>
     <router-view/>
   </div>
@@ -7,10 +8,11 @@
 
 <script>
 import pagenavbar from '@/components/pagenavbar'
+import banner from '@/components/banner'
 
 export default {
   name: 'app',
-  components: {pagenavbar}
+  components: {pagenavbar, banner}
 }
 </script>
 
@@ -22,5 +24,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  height: 100%;
 }
+
+
+
 </style>
