@@ -5,7 +5,7 @@
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
 
-    <b-navbar-brand id="navbrand" href="#"> </b-navbar-brand>
+    <b-navbar-brand v-on:click="scrollTop" id="navbrand" href="#"> </b-navbar-brand>
 
 
     <b-collapse is-nav id="nav_collapse">
@@ -20,7 +20,7 @@
       <b-navbar-nav class="ml-auto">
 
         <b-nav-form class="searchfunc">
-          <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
+          <b-form-input size="sm" position="center" class="mr-sm-2" type="text" placeholder="Search"/>
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
         </b-nav-form>
 
@@ -43,31 +43,43 @@
 <script>
 export default {
   name: 'pagenavbar',
+  methods: {
+    scrollTop: function () {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      }
+
+  },
+  created: function(){
+    $(document).ready(function() {
+
+      $(window).scroll(function () {
+
+      //    console.log($(window).scrollTop())
+        if ($(window).scrollTop() > 280) {
+          $('#nav_bar').addClass('navbar-fixed');
+          $('#navbrand').addClass('animationIn');
+          document.getElementById('navbrand').innerHTML = 'Citypedia';
+        }
+        if ($(window).scrollTop() < 281) {
+          $('#nav_bar').removeClass('navbar-fixed');
+          $('#navbrand').removeClass('animationIn');
+          document.getElementById('navbrand').innerHTML = '';
+        }
+      });
+    });
+  }
 }
 
-$(document).ready(function() {
-
-  $(window).scroll(function () {
-
-  //    console.log($(window).scrollTop())
-    if ($(window).scrollTop() > 280) {
-      $('#nav_bar').addClass('navbar-fixed');
-      $('#navbrand').addClass('animationIn');
-      document.getElementById('navbrand').innerHTML = 'Citypedia';
-    }
-    if ($(window).scrollTop() < 281) {
-      $('#nav_bar').removeClass('navbar-fixed');
-      $('#navbrand').removeClass('animationIn');
-      document.getElementById('navbrand').innerHTML = '';
-    }
-  });
-});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 
 <style scoped>
+
+.disable-select {
+  outline: none;
+}
 
 .animationIn {
   opacity: 0;

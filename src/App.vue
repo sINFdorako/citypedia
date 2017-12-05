@@ -26,4 +26,7 @@ export default {
   margin-top: 60px;
   height: 100%;
 }
+
+
+
 </style>
