@@ -5,7 +5,7 @@
     <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
 
-    <b-navbar-brand v-on:click="scrollTop" id="navbrand" href="#"> </b-navbar-brand>
+    <b-navbar-brand v-on:click="scrollTop" href="#"> </b-navbar-brand>
 
 
     <b-collapse is-nav id="nav_collapse">
