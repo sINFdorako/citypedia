@@ -27,8 +27,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   height: 100%;
+  /* remove shitty outline shizzl */
+  border: none;
+  outline: 0;
 }
 
 
-
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 </style>
