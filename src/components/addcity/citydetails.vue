@@ -1,6 +1,22 @@
 <template>
   <div>
+
     <h1 class="positioning"> More details about {{this.$route.params.input}} </h1>
+    <div class="positioning">
+      <h3>Country</h3>
+      <input id="myTextBox" class="input" type="text" v-model="country" placeholder="Country">
+    </div>
+
+    <div class="positioning">
+      <h3>Population</h3>
+      <input id="myTextBox" class="input" type="number" v-model="population" placeholder="Population">
+    </div>
+
+    <div>
+      <b-button class="button" v-on:click="back" > back </b-button>
+      <b-button  class="button" v-on:click="checkinput" >go on</b-button>
+    </div>
+
   </div>
 
 </template>
@@ -9,15 +25,31 @@
 <script>
 export default {
   name: 'citydetails',
-}
+   methods: {
 
+       back: function(event) {
+         if(event){
+           this.$router.go(-1)
+         }
+
+       }
+   }
+  }
 </script>
 
 <style scoped>
 
 .positioning{
   margin-top: 25pt;
+}
 
+.input{
+ padding: 8pt;
+ text-align: center;
+}
+
+.button{
+  margin-top: 30pt;
 }
 
 </style>

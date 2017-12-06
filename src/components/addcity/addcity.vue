@@ -3,10 +3,10 @@
     <div class="positioning">
       <h1>Which city do you want to add?</h1>
       <br>
-      <input id="myTextBox" class="input" type="text" v-model="city" placeholder="city">
+      <input id="inputField" class="input" type="text" v-model="city" placeholder="city">
       <br>
       <div>
-        <b-button :to="{ path: 'citydetails/'+city }" class="button">go on</b-button>
+        <b-button :to="{ path: 'citydetails/'+city }" class="button" v-on:click="checkinputcity">go on</b-button>
       </div>
     </div>
   </div>
@@ -21,11 +21,23 @@ export default {
     return {
       city:'',
     };
-  }
+  },
+
+  methods: {
+      checkinputcity: function (event) {
+        if(event){
+          var inputField = document.getElementById("inputField").value;
+          if (this.city == null) {
+            alert("Please tell us the name of your city before you go on")
+          }
+
+        }
+      }
+    }
 }
 
-$("#myTextBox").focus();
 
+//:to="{ path: 'citydetails/'+city }"
 </script>
 
 <style scoped>
