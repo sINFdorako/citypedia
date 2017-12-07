@@ -27,7 +27,7 @@ export default {
   name: 'citydetails',
   data: function(){
     return {
-       input: this.$route.params.input
+       input: this.$route.params.input   
     };
   },
 
