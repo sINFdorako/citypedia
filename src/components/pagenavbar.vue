@@ -118,6 +118,8 @@ input {
   width: auto;
 }
 
+#nav_bar
+
 .searchfunc {
   padding-left: 10%;
 }
@@ -129,6 +131,9 @@ input {
     width: 100%;
 }
 
+.bg-dark {
+    background-color: #393939 !important;
+}
 
 @keyframes bounceIn{
   0%{
