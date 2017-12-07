@@ -6,7 +6,7 @@
       <input id="inputField" class="input" type="text" v-model="city" placeholder="city">
       <br>
       <div>
-        <b-button v-if="this.city != null" :to="{ path: 'citydetails/'+city }" class="button" v-on:click="checkinputcity">go on</b-button>
+        <b-button :to="{ path: 'citydetails/'+city }" class="button" v-on:click="checkinputcity">go on</b-button>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@ export default {
   name: 'addcity',
   data: function(){
     return {
-      city: null,
+      city:'',
     };
   },
 
