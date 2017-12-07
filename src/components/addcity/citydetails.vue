@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h1 class="positioning"> More details about {{this.$route.params.input}} </h1>
+    <h1 class="positioning"> More details about {{input}} </h1>
     <div class="positioning">
       <h3>Country</h3>
       <input id="myTextBox" class="input" type="text" v-model="country" placeholder="Country">
@@ -25,13 +25,18 @@
 <script>
 export default {
   name: 'citydetails',
+  data: function(){
+    return {
+       input: this.$route.params.input   
+    };
+  },
+
    methods: {
 
        back: function(event) {
          if(event){
            this.$router.go(-1)
          }
-
        }
    }
   }
