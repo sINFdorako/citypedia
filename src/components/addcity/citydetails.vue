@@ -12,7 +12,14 @@
       <input id="myTextBox" class="input" type="number" v-model="population" placeholder="Population">
     </div>
 
-    <div>
+    <div class="positioning">
+      <h3>Area in km²</h3>
+
+      <input id="myTextBox" class="input" type="number" v-model="area" placeholder="Area in km²">
+
+    </div>
+
+    <div class="positioning">
       <b-button class="button" v-on:click="back" > back </b-button>
       <b-button  class="button" v-on:click="checkinput" >go on</b-button>
     </div>
@@ -27,7 +34,7 @@ export default {
   name: 'citydetails',
   data: function(){
     return {
-       input: this.$route.params.input   
+       input: this.$route.params.input
     };
   },
 
@@ -44,13 +51,17 @@ export default {
 
 <style scoped>
 
+
 .positioning{
   margin-top: 25pt;
+  text-align: center
 }
 
 .input{
  padding: 8pt;
  text-align: center;
+ width: auto;
+
 }
 
 .button{
