@@ -31,7 +31,6 @@ export default {
     };
   },
 
-
    methods: {
 
        back: function(event) {

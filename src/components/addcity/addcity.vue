@@ -3,7 +3,7 @@
     <div class="positioning">
       <h1>Which city do you want to add?</h1>
       <br>
-      <input id="inputField" class="input" type="text" v-model="input" placeholder="city">
+      <input id="inputField" class="input" type="text" v-model="input" placeholder="city" value="localStorage.cityname">
       <br>
       <div>
         <b-button class="button" v-on:click="checkinputcity">go on</b-button>
@@ -19,8 +19,13 @@ export default {
 
   data: function(){
     return {
-      input: this.input,
+      input: localStorage.cityname,
     };
+  },
+  created: function(){
+    $(document).ready(function() {
+      $('#inputField').val(localStorage.cityname);
+    });
   },
 
   methods: {
@@ -32,11 +37,13 @@ export default {
               alert("Please tell us the name of your city before you go on")
         }else{
           this.$router.push({ path: 'citydetails/' +this.$data.input})
+          localStorage.setItem("cityname", this.$data.input)
       }
     }
   }
 }
 }
+
 
 
 //:to="{ path: 'citydetails/'+city }"
