@@ -82,6 +82,13 @@ export default {
 
 <style scoped>
 
+
+
+a:focus, li:focus {
+  border:none;
+  outline: none;
+}
+
 input {
   text-align: center;
   height: 30px;
