@@ -10,19 +10,21 @@
 
     <b-collapse is-nav id="nav_collapse">
 
-      <b-navbar-nav>
+      <b-navbar-nav id="leftItems" >
         <b-nav-item href="#">A-Z</b-nav-item>
         <b-nav-item href="#">Ranking</b-nav-item>
         <b-nav-item href="#">About</b-nav-item>
         <b-nav-item :to="{ path: '/addcity' }">Add City</b-nav-item>
       </b-navbar-nav>
 
+      <b-nav-form form class="searchfunc">
+        <input size="80" position="center" class="mr-sm-2" type="text" placeholder="Search"/>
+      </b-nav-form>
+
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
 
-        <b-nav-form class="searchfunc">
-          <b-form-input size="sm" position="center" class="mr-sm-2" type="text" placeholder="Search"/>
-        </b-nav-form>
+
 
         <b-nav-item-dropdown right>
           <!-- Using button-content slot -->
@@ -80,6 +82,13 @@ export default {
 
 <style scoped>
 
+input {
+  text-align: center;
+  height: 30px;
+  border:none;
+  border-radius: 10px;
+}
+
 .animationIn {
   opacity: 0;
   animation-name: bounceIn;
@@ -88,13 +97,22 @@ export default {
   animation-fill-mode: forwards;
 }
 
+#leftItems {
+  padding-left:160px;
+}
+
+#navbrand {
+  width: 20px;
+  margin-right: -80px;
+}
+
 #usr {
   height: 32px;
   width: auto;
 }
 
-.searchfunc{
-  margin-left: 200pt;
+.searchfunc {
+  padding-left: 10%;
 }
 
 .navbar-fixed {
