@@ -9,13 +9,13 @@
 
     <div class="positioning">
       <h3>Population</h3>
-      <input id="myTextBox" class="input" type="number" v-model="population" placeholder="Population">
+      <input id="myTextBox" class="input" type="text" v-model="population" placeholder="Population">
     </div>
 
     <div class="positioning">
       <h3>Area in km²</h3>
 
-      <input id="myTextBox" class="input" type="number" v-model="area" placeholder="Area in km²">
+      <input id="myTextBox" class="input" type="text" v-model="area" placeholder="Area in km²">
 
     </div>
 
@@ -60,7 +60,10 @@ export default {
 .input{
  padding: 8pt;
  text-align: center;
- width: auto;
+ height:50px;
+ width: 350px;
+ border:solid grey 2px;
+ border-radius: 200px;
 
 }
 
