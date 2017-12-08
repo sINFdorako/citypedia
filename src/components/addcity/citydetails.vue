@@ -3,7 +3,7 @@
 
     <h1 class="positioning"> More details about {{input}}</h1>
     <div class="positioning">
-      <h3>Country</h3>
+      <h3></h3>
 
       <select id="dropdownlist" class="input" v-on:change="validated = 1">
         <option selected disabled value="">Country</option>
@@ -101,11 +101,8 @@ export default {
 
        checkinput: function(event){
          if(event){
-           var myTextBox = document.getElementById("myTextBox").value;
-           var myTextBox1 = document.getElementById("myTextBox1").value;
-           var myTextBox2 = document.getElementById("myTextBox2").value;
 
-           if (this.$data.population == null || this.$data.area == null || this.$data.country == null) {
+           if (this.$data.population == null || this.$data.population == '' || this.$data.area == null || this.$data.area == '' || this.$data.country == null || this.$data.country == '') {
              alert("Please fill in the empty fields")
            }else{
            this.$router.push({ path: 'cityphots/' +this.$data.input})
