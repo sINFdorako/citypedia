@@ -33,7 +33,7 @@ export default {
       checkinputcity: function (event){
         if(event){
             var inputField = document.getElementById("inputField").value;
-            if (this.$data.input == null) {
+            if (this.$data.input == null || this.$data.input == '') {
               alert("Please tell us the name of your city before you go on")
         }else{
           this.$router.push({ path: 'citydetails/' +this.$data.input})
