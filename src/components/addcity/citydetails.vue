@@ -1,21 +1,28 @@
 <template>
   <div>
 
-    <h1 class="positioning"> More details about {{input}} </h1>
+    <h1 class="positioning"> More details about {{input}}</h1>
     <div class="positioning">
       <h3>Country</h3>
-      <input id="myTextBox" class="input" type="text" v-model="country" placeholder="Country" value="localStorage.country" >
+
+      <select id="dropdownlist" class="input" v-model="countryId" v-on:change="validated = 1">
+        <option disabled value="">Country</option>
+        <option v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
+      </select>
     </div>
 
     <div class="positioning">
       <h3>Population</h3>
-      <input id="myTextBox1" class="input" type="text" v-model="population" placeholder="Population" value="localStorage.population">
+
+      <input id="myTextBox" class="input" type="number" v-model="population" :disabled="validated == 0" placeholder="Population" min="1" max="10000000" value="localStorage.population">
+
     </div>
 
     <div class="positioning">
       <h3>Area in km²</h3>
 
-      <input id="myTextBox2" class="input" type="text" v-model="area" placeholder="Area in km²" value="localStorage.area">
+
+      <input id="myTextBox" class="input" type="number" v-model="area" :disabled="validated == 0" placeholder="Area in km²" value="localStorage.area">
 
     </div>
 
@@ -32,9 +39,36 @@
 <script>
 export default {
   name: 'citydetails',
-  data: function(){
+
+  mounted: function() {
+    //Capitalize first letter of input
+    $(document).ready(function() {
+        $('input').on('keydown', function(event) {
+            if (this.selectionStart == 0 && event.keyCode >= 65 && event.keyCode <= 90 && !(event.shiftKey) && !(event.ctrlKey) && !(event.metaKey) && !(event.altKey)) {
+               var $t = $(this);
+               event.preventDefault();
+               var char = String.fromCharCode(event.keyCode);
+               $t.val(char + $t.val().slice(this.selectionEnd));
+               this.setSelectionRange(1,1);
+            }
+        });
+    });
+    //Request
+   this.$http.get('//restcountries.eu/rest/v2/all')
+   .then(function(resp) {
+     this.countries = resp.body;
+   })
+   .catch(function(err) {
+     this.countries = "Something went wrong: " +err
+   })
+  },
+  data:
+  function(){
     return {
        input: this.$route.params.input,
+
+       countries: [],
+       validated: 0,
        population: localStorage.population,
        area: localStorage.area,
        country: localStorage.country
@@ -48,10 +82,18 @@ export default {
       $('#myTextBox2').val(localStorage.area);
     });
   },
-
+  
    methods: {
+     oneDot: function(input){
+       var value = input.value,
+       value = value.split('.').join('');
+       if (value.length > 3) {
+         value = value.substring(0, value.length - 3) + '.' + value.substring(value.length - 3, value.length);
+   }
+      input.value = value;
+ },
 
-       back: function(event) {
+     back: function(event) {
          if(event){
            this.$router.go(-1)
          }
@@ -79,7 +121,6 @@ export default {
 </script>
 
 <style scoped>
-
 
 .positioning{
   margin-top: 25pt;
