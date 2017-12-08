@@ -6,6 +6,14 @@
 </template>
 
 <script>
+export default {
+  name: 'cityphots',
+  data: function(){
+    return {
+       input: this.$route.params.input
+    };
+  },
+}
 </script>
 
 <style scoped>
