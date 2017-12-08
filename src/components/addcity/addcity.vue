@@ -64,6 +64,10 @@ export default {
  .input{
   padding: 8pt;
   text-align: center;
+  height:50px;
+  width: 350px;
+  border:solid grey 2px;
+  border-radius: 200px;
 }
 
 .button{
