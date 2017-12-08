@@ -4,6 +4,7 @@
     <h1 class="positioning"> More details about {{input}}</h1>
     <div class="positioning">
       <h3>Country</h3>
+
       <select id="dropdownlist" class="input" v-model="countryId" v-on:change="validated = 1">
         <option disabled value="">Country</option>
         <option v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
@@ -12,13 +13,17 @@
 
     <div class="positioning">
       <h3>Population</h3>
-      <input id="myTextBox" class="input" type="number" v-model="population" :disabled="validated == 0" placeholder="Population" min="1" max="10000000">
+
+      <input id="myTextBox" class="input" type="number" v-model="population" :disabled="validated == 0" placeholder="Population" min="1" max="10000000" value="localStorage.population">
+
     </div>
 
     <div class="positioning">
       <h3>Area in km²</h3>
 
-      <input id="myTextBox" class="input" type="number" v-model="area" :disabled="validated == 0" placeholder="Area in km²">
+
+      <input id="myTextBox" class="input" type="number" v-model="area" :disabled="validated == 0" placeholder="Area in km²" value="localStorage.area">
+
     </div>
 
     <div class="positioning">
@@ -61,10 +66,23 @@ export default {
   function(){
     return {
        input: this.$route.params.input,
+
        countries: [],
        validated: 0,
+       population: localStorage.population,
+       area: localStorage.area,
+       country: localStorage.country
     };
   },
+
+  created: function(){
+    $(document).ready(function() {
+      $('#myTextBox').val(localStorage.country);
+      $('#myTextBox1').val(localStorage.population);
+      $('#myTextBox2').val(localStorage.area);
+    });
+  },
+  
    methods: {
      oneDot: function(input){
        var value = input.value,
@@ -79,9 +97,27 @@ export default {
          if(event){
            this.$router.go(-1)
          }
+       },
+
+       checkinput: function(event){
+         if(event){
+           var myTextBox = document.getElementById("myTextBox").value;
+           var myTextBox1 = document.getElementById("myTextBox1").value;
+           var myTextBox2 = document.getElementById("myTextBox2").value;
+
+           if (this.$data.population == null || this.$data.area == null || this.$data.country == null) {
+             alert("Please fill in the empty fields")
+           }else{
+           this.$router.push({ path: 'cityphots/' +this.$data.input})
+           localStorage.setItem("country", this.$data.country)
+           localStorage.setItem("population", this.$data.population)
+           localStorage.setItem("area", this.$data.area)
+         }
        }
+     }
    }
-  }
+}
+
 </script>
 
 <style scoped>

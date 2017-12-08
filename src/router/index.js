@@ -4,6 +4,8 @@ import VueResource from 'vue-resource'
 import router from '@/components/router'
 import addcity from '@/components/addcity/addcity'
 import citydetails from '@/components/addcity/citydetails'
+import cityphots from '@/components/addcity/cityphots'
+
 
 
 
@@ -12,6 +14,7 @@ Vue.use(Router)
 Vue.use(VueResource)
 Vue.use(addcity)
 Vue.use(citydetails)
+Vue.use(cityphots)
 
 export default new Router({
   routes: [
@@ -30,6 +33,11 @@ export default new Router({
       name: 'citydetails',
       component: citydetails
 
+    },
+    {
+      path: '/citydetails/cityphots/:input',
+      name: 'cityphots',
+      component: cityphots
     },
   ]
 })
