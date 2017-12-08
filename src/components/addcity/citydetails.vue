@@ -5,8 +5,8 @@
     <div class="positioning">
       <h3>Country</h3>
 
-      <select id="dropdownlist" class="input" v-model="countryId" v-on:change="validated = 1">
-        <option disabled value="">Country</option>
+      <select id="dropdownlist" class="input" v-on:change="validated = 1">
+        <option selected disabled value="">Country</option>
         <option v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
       </select>
     </div>
@@ -82,7 +82,7 @@ export default {
       $('#myTextBox2').val(localStorage.area);
     });
   },
-  
+
    methods: {
      oneDot: function(input){
        var value = input.value,
