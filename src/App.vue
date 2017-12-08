@@ -11,10 +11,12 @@ import pagenavbar from '@/components/pagenavbar'
 import banner from '@/components/banner'
 import addcity from '@/components/addcity/addcity'
 import citydetails from '@/components/addcity/citydetails'
+import cityphots from '@/components/addcity/cityphots'
+
 
 export default {
   name: 'app',
-  components: {pagenavbar, banner, addcity, citydetails}
+  components: {pagenavbar, banner, addcity, citydetails, cityphots}
 }
 </script>
 

@@ -44,6 +44,11 @@ export default {
          if(event){
            this.$router.go(-1)
          }
+       },
+
+       checkinput: function(event){
+         if(event){
+           this.$router.push({ path: 'cityphots/' +this.$data.input})         }
        }
    }
   }
