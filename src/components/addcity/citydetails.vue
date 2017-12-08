@@ -3,14 +3,14 @@
 
     <h1 class="positioning"> More details about {{input}}</h1>
     <div class="positioning">
-      <h3></h3>
+
 
       <select id="dropdownlist" class="input" v-on:change="validated = 1">
         <option selected disabled value="">Country</option>
         <option v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
       </select>
     </div>
-
+<hr />
     <div class="positioning">
       <h3>Population</h3>
 
