@@ -2,28 +2,27 @@
   <div>
 
     <h1 class="positioning"> More details about {{input}}</h1>
+
     <div class="positioning">
-
-
       <select id="dropdownlist" class="input" v-on:change="validated = 1">
         <option selected disabled value="">Country</option>
         <option v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
       </select>
     </div>
-<hr />
+                                                <hr />
     <div class="positioning">
       <h3>Population</h3>
+      <input id="myTextBox1" class="input" type="number" v-model="population" :disabled="validated == 0" placeholder="Population" min="1" max="10000000" value="localStorage.population">
+    </div>
 
-      <input id="myTextBox" class="input" type="number" v-model="population" :disabled="validated == 0" placeholder="Population" min="1" max="10000000" value="localStorage.population">
-
+    <div class="positioning">
+      <h3>Something important</h3>
+      <input id="myTextBox3" class="input" type="text" v-model="___" :disabled="validated == 0" placeholder="___" value="localStorage.__">
     </div>
 
     <div class="positioning">
       <h3>Area in km²</h3>
-
-
-      <input id="myTextBox" class="input" type="number" v-model="area" :disabled="validated == 0" placeholder="Area in km²" value="localStorage.area">
-
+      <input id="myTextBox2" class="input" type="number" v-model="area" :disabled="validated == 0" placeholder="Area in km²" value="localStorage.area">
     </div>
 
     <div class="positioning">
@@ -121,7 +120,7 @@ export default {
 
 .positioning{
   margin-top: 25pt;
-  text-align: center
+  text-align: center;
 }
 
 .input{
