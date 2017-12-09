@@ -117,7 +117,7 @@ export default {
    methods: {
      saveValue: function(){
        var type = document.getElementById("dropdownlist").value;
-       validated = 1;
+       this.$data.validated = 1;
        localStorage.setItem("country",type);
      },
      back: function(event) {
