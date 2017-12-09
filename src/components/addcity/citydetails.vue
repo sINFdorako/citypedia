@@ -1,12 +1,15 @@
 <template>
   <div>
 
-    <h1 class="positioning"> More details about {{input}}</h1>
+    <h1 style="text-align: center; margin-top: 20pt;"> More details about {{input}}</h1>
 
+<div id="flagdiv">
+      <img id="flag"/>
+</div>
     <div class="positioning">
       <select id="dropdownlist" class="input" v-on:change="saveValue">
         <option selected disabled value="">Country</option>
-        <option v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
+        <option id="options" value="obj" v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
       </select>
     </div>
                                                 <hr />
@@ -83,6 +86,7 @@ export default {
    this.$http.get('//restcountries.eu/rest/v2/all')
    .then(function(resp) {
      this.countries = resp.body;
+
    })
    .catch(function(err) {
      this.countries = "Something went wrong: " +err
@@ -116,9 +120,11 @@ export default {
 
    methods: {
      saveValue: function(){
+       var dropdownindex = $('#dropdownlist').find(":selected").index();
        var type = document.getElementById("dropdownlist").value;
        this.$data.validated = 1;
        localStorage.setItem("country",type);
+       document.getElementById("flag").src=this.countries[dropdownindex-1].flag;
      },
      back: function(event) {
          if(event){
@@ -150,6 +156,17 @@ export default {
 </script>
 
 <style scoped>
+
+#flagdiv{
+  text-align: center;
+  height: 20px;
+}
+
+#flag{
+  height: 20px;
+  width: auto;
+}
+
 #centerCheckbox {
   text-align: center;
   align-self: center;
