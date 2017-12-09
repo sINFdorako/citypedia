@@ -4,7 +4,7 @@
     <h1 class="positioning"> More details about {{input}}</h1>
 
     <div class="positioning">
-      <select id="dropdownlist" class="input" v-on:change="validated = 1">
+      <select id="dropdownlist" class="input" v-on:change="saveValue">
         <option selected disabled value="">Country</option>
         <option v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
       </select>
@@ -12,23 +12,50 @@
                                                 <hr />
     <div class="positioning">
       <h3>Population</h3>
-      <input id="myTextBox1" class="input" type="number" v-model="population" :disabled="validated == 0" placeholder="Population" min="1" max="10000000" value="localStorage.population">
-    </div>
-
-    <div class="positioning">
-      <h3>Something important</h3>
-      <input id="myTextBox3" class="input" type="text" v-model="___" :disabled="validated == 0" placeholder="___" value="localStorage.__">
+      <input id="ptextbox" class="input" type="number" v-model="population" :disabled="validated == 0" placeholder="Population" min="1" max="10000000" value="localStorage.population">
     </div>
 
     <div class="positioning">
       <h3>Area in km²</h3>
-      <input id="myTextBox2" class="input" type="number" v-model="area" :disabled="validated == 0" placeholder="Area in km²" value="localStorage.area">
+      <input id="aiktextbox" class="input" type="number" v-model="area" :disabled="validated == 0" placeholder="Area in km²" value="localStorage.area">
     </div>
 
-    <div class="positioning">
-      <b-button class="button" v-on:click="back" > back </b-button>
-      <b-button  class="button" v-on:click="checkinput" >go on</b-button>
-    </div>
+<hr />
+<div id="centerCheckbox">
+<b-form-checkbox id="optinfocheckbox"
+                    v-model="status"
+                    value="accepted"
+                    unchecked-value="not_accepted">
+     optional info
+   </b-form-checkbox>
+</div>
+<div id="optional" v-if="status == 'accepted'">
+    <hr />
+<div class="positioning">
+<h3>Average temperature °C</h3>
+<input id="avgtemptextbox" class="input" type="number"
+v-model="avgtemp" :disabled="validated == 0" placeholder="Average temperature °C"
+min="1" max="60" value="localStorage.avgtemp">
+</div>
+
+<div class="positioning">
+<h3>Number of universities</h3>
+<input id="noutextbox" class="input" type="number"
+v-model="nou" :disabled="validated == 0" placeholder="Number of universities" value="localStorage.nou">
+</div>
+
+<div class="positioning">
+<h3>Unemployment rate</h3>
+<input id="uratetextbox" class="input" type="number" v-model="urate" :disabled="validated == 0" placeholder="Unemployment rate" value="localStorage.uerate">
+</div>
+
+</div>
+
+<div class="positioning">
+<b-button class="button" v-on:click="back" > back </b-button>
+<b-button  class="button" v-on:click="checkinput" >go on</b-button>
+</div>
+
 
   </div>
 
@@ -65,33 +92,34 @@ export default {
   function(){
     return {
        input: this.$route.params.input,
-
+       status: 'not_accepted',
        countries: [],
+       country: localStorage.country,
        validated: 0,
        population: localStorage.population,
        area: localStorage.area,
-       country: localStorage.country
+       avgtemp: localStorage.avgtemp,
+       nou: localStorage.nou,
+       urate: localStorage.urate,
     };
   },
 
   created: function(){
     $(document).ready(function() {
-      $('#myTextBox').val(localStorage.country);
-      $('#myTextBox1').val(localStorage.population);
-      $('#myTextBox2').val(localStorage.area);
+      $('#ptextbox').val(localStorage.population);
+      $('#aiktextbox').val(localStorage.area);
+      $('avgtemptextbox').val(localStorage.avgtemp)
+      $('noutextbox').val(localStorage.nou)
+      $('uratetextbox').val(localStorage.urate)
     });
   },
 
    methods: {
-     oneDot: function(input){
-       var value = input.value,
-       value = value.split('.').join('');
-       if (value.length > 3) {
-         value = value.substring(0, value.length - 3) + '.' + value.substring(value.length - 3, value.length);
-   }
-      input.value = value;
- },
-
+     saveValue: function(){
+       var type = document.getElementById("dropdownlist").value;
+       validated = 1;
+       localStorage.setItem("country",type);
+     },
      back: function(event) {
          if(event){
            this.$router.go(-1)
@@ -101,13 +129,18 @@ export default {
        checkinput: function(event){
          if(event){
 
-           if (this.$data.population == null || this.$data.population == '' || this.$data.area == null || this.$data.area == '' || this.$data.country == null || this.$data.country == '') {
+           if ( this.$data.population == null
+             || this.$data.population == ''
+             || this.$data.area == null
+             || this.$data.area == '') {
              alert("Please fill in the empty fields")
            }else{
            this.$router.push({ path: 'cityphots/' +this.$data.input})
-           localStorage.setItem("country", this.$data.country)
            localStorage.setItem("population", this.$data.population)
            localStorage.setItem("area", this.$data.area)
+           localStorage.setItem("avgtemp", this.$data.avgtemp)
+           localStorage.setItem("nou", this.$data.nou)
+           localStorage.setItem("urate", this.$data.urate)
          }
        }
      }
@@ -117,9 +150,14 @@ export default {
 </script>
 
 <style scoped>
-
+#centerCheckbox {
+  text-align: center;
+  align-self: center;
+  color: grey;
+}
 .positioning{
-  margin-top: 25pt;
+  padding-top: 20pt;
+  padding-bottom: 20pt;
   text-align: center;
 }
 
