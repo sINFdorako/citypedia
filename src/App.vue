@@ -3,6 +3,7 @@
     <banner/>
     <pagenavbar/>
     <router-view/>
+    <ownfooter/>
   </div>
 </template>
 
@@ -12,18 +13,17 @@ import banner from '@/components/banner'
 import addcity from '@/components/addcity/addcity'
 import citydetails from '@/components/addcity/citydetails'
 import cityphots from '@/components/addcity/cityphots'
+import ownfooter from '@/components/ownfooter'
 
 
 export default {
   name: 'app',
-  components: {pagenavbar, banner, addcity, citydetails, cityphots}
+  components: {pagenavbar, banner, addcity, citydetails, cityphots, ownfooter}
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

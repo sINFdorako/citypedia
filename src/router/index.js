@@ -8,7 +8,6 @@ import cityphots from '@/components/addcity/cityphots'
 
 
 
-
 Vue.use(router)
 Vue.use(Router)
 Vue.use(VueResource)
@@ -39,5 +38,6 @@ export default new Router({
       name: 'cityphots',
       component: cityphots
     },
+
   ]
 })

@@ -72,8 +72,10 @@ export default {
 
 <style scoped>
 .positioning{
-  margin-top: 25pt;
-}
+    margin-top: 25pt;
+    text-align: center;
+  }
+
 
 
  .input{
