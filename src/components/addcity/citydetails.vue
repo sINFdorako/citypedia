@@ -1,18 +1,21 @@
 <template>
   <div>
 
-    <h1 style="text-align: center; margin-top: 20pt;"> More details about {{input}}</h1>
+    <h1 style="text-align: center; margin-top: 20pt;"> More details about {{input}}   <img id="flag"/></h1>
 
 <div id="flagdiv">
-      <img id="flag"/>
+
 </div>
     <div class="positioning">
       <select id="dropdownlist" class="input" v-on:change="saveValue">
         <option selected disabled value="">Country</option>
         <option id="options" value="obj" v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
       </select>
+
     </div>
-                                                <hr />
+
+<hr />
+
     <div class="positioning">
       <h3>Population</h3>
       <input id="ptextbox" class="input" type="number" v-model="population" :disabled="validated == 0" placeholder="Population" min="1" max="10000000" value="localStorage.population">
@@ -23,23 +26,48 @@
       <input id="aiktextbox" class="input" type="number" v-model="area" :disabled="validated == 0" placeholder="Area in km²" value="localStorage.area">
     </div>
 
-<hr />
-<div id="centerCheckbox">
-<b-form-checkbox id="optinfocheckbox"
-                    v-model="status"
-                    value="accepted"
-                    unchecked-value="not_accepted">
-     optional info
-   </b-form-checkbox>
-</div>
-<div id="optional" v-if="status == 'accepted'">
-    <hr />
-<div class="positioning">
-<h3>Average temperature °C</h3>
-<input id="avgtemptextbox" class="input" type="number"
-v-model="avgtemp" :disabled="validated == 0" placeholder="Average temperature °C"
-min="1" max="60" value="localStorage.avgtemp">
-</div>
+    <div id="capitalcheckbox">
+    <b-form-checkbox id="capitalcheckbox"
+                      v-model="isCapital"
+                      value="true"
+                      unchecked-value="false">
+                      Capital city
+    </b-form-checkbox>
+      </div>
+
+<hr  />
+    <div id="centerCheckbox">
+        <b-form-checkbox id="optinfocheckbox"
+                          v-model="isoptional"
+                          value="true"
+                          unchecked-value="false">
+                          optional info
+        </b-form-checkbox>
+    </div>
+    <div id="optional" v-if="isoptional == 'true'">
+      <hr />
+
+<div id="optionalcheckboxes">
+<b-form-checkbox id="hastransportationcheckbox"
+v-model="hasTrainstation"
+value="false"
+unchecked-value="true">
+Has train station
+</b-form-checkbox> <b-form-checkbox id="haslakescheckbox"
+v-model="hasLakes"
+value="false"
+unchecked-value="true">
+Has lakes
+</b-form-checkbox>
+        </div>
+
+
+    <div class="positioning">
+      <h3>Average temperature °C</h3>
+      <input id="avgtemptextbox" class="input" type="number"
+            v-model="avgtemp" :disabled="validated == 0" placeholder="Average temperature °C"
+            min="1" max="60" value="localStorage.avgtemp">
+    </div>
 
 <div class="positioning">
 <h3>Number of universities</h3>
@@ -96,15 +124,17 @@ export default {
   function(){
     return {
        input: this.$route.params.input,
-       status: 'not_accepted',
        countries: [],
        country: localStorage.country,
        validated: 0,
+       //Inputs
        population: localStorage.population,
        area: localStorage.area,
        avgtemp: localStorage.avgtemp,
        nou: localStorage.nou,
        urate: localStorage.urate,
+       //Checkboxes
+       isoptional: 'false',
     };
   },
 
@@ -157,13 +187,18 @@ export default {
 
 <style scoped>
 
-#flagdiv{
+#capitalcheckbox{
   text-align: center;
-  height: 20px;
+}
+
+#optionalcheckboxes{
+  text-align: center;
 }
 
 #flag{
-  height: 20px;
+  height: 30px;
+  margin-left: 5px;
+  padding-bottom: 3px;
   width: auto;
 }
 

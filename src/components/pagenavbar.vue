@@ -11,10 +11,10 @@
     <b-collapse is-nav id="nav_collapse">
 
       <b-navbar-nav id="leftItems" >
-        <b-nav-item href="#">A-Z</b-nav-item>
-        <b-nav-item href="#">Ranking</b-nav-item>
-        <b-nav-item href="#">About</b-nav-item>
-        <b-nav-item :to="{ path: '/addcity' }">Add City</b-nav-item>
+        <b-nav-item class="hvr-underline-from-center" href="#">A-Z</b-nav-item>
+        <b-nav-item class="hvr-underline-from-center" href="#">Ranking</b-nav-item>
+
+        <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }">Add City</b-nav-item>
       </b-navbar-nav>
 
       <b-nav-form form class="searchfunc">
@@ -81,7 +81,6 @@ export default {
 
 
 <style scoped>
-
 
 
 a:focus, li:focus {
@@ -152,5 +151,35 @@ input {
     opacity: 1;
     transform: scale(1) translate3d(0,0,0);
   }
+}
+
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: white;
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
 }
 </style>
