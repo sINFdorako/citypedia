@@ -10,6 +10,7 @@ import cityphots from '@/components/addcity/cityphots'
 
 Vue.use(router)
 Vue.use(Router)
+
 Vue.use(VueResource)
 Vue.use(addcity)
 Vue.use(citydetails)

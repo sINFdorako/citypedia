@@ -27,6 +27,10 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.center{
+  text-align: center;
+}
+
 .left {
   text-align: left;
   margin-right: 60%;
