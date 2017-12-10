@@ -10,7 +10,7 @@
         <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }">Add City</b-nav-item>
       </b-navbar-nav>
       <!-- doubled in class because centering otherwise seems impossible -->
-      <b-nav-form form class="mr-sm-5">
+      <b-nav-form id="searchbar" form class="mr-sm-5">
         <b-nav-form form class="mr-sm-5">
         <input size="80" class="mr-sm-5 searchfunc" type="text" placeholder="Search"/>
         </b-nav-form>
@@ -33,6 +33,13 @@
 <script>
 export default {
   name: 'pagenavbar',
+  watch: {
+    $route: function(){
+      if(this.$route.path !== '#'){
+        $('#searchbar').hide();
+      }
+    }
+  },
   methods: {
     scrollTop: function () {
       if(document.location="/#/"){
