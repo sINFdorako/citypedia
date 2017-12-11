@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="container">
     <h1 class="left">Welcome</h1>
     <p class="left">
       Hi! Welcome to <strong>Citypedia</strong>.<br />
@@ -40,10 +40,10 @@
   margin-left: 40%;
 }
 
-div {
+#container {
   margin-top: 17px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
   font-size: 13pt;
   font-family: 'Montserrat', sans-serif;
 }
