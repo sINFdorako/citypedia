@@ -14,10 +14,9 @@
             </div>
           </span>
         </label>
-        <input type="file" multiple="true" id="file"/>
+        <input type="file" multiple="true" id="file" v-on:change="file"/>
       </form>
     </div>
-
 
     <div class="positioningbutton">
       <b-button class="button" v-on:click="back" > back </b-button>
@@ -39,6 +38,7 @@ export default {
        area: this.$route.params.area,
        country: this.$route.params.country,
        image: '',
+       file: null
     };
   },
   methods: {
