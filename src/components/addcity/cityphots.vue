@@ -3,22 +3,23 @@
 
     <h1 style="text-align: center; margin-top: 30pt;">Add some pictures of {{input}}</h1>
 
+
     <div class="positioning">
-      <img src="../../assets/fileuploader-dragdrop-icon.png"/>
+      <form>
+        <label for="file" class="input-label">
+          <span>
+            <div class="item">
+              <img class="imagestyle" alt="file upload png" width="65" height="60">
+              <div class="item-overlay top"></div>
+            </div>
+          </span>
+        </label>
+        <input type="file" multiple="true" id="file"/>
+      </form>
     </div>
 
-    <!--<div class="center">
-    <vue-core-image-upload
-    class="btn btn-primary"
-    :crop="false"
-    @imageuploaded="imageuploaded"
-    :data="data"
-    :max-file-size="5242880"
-    url="http://101.198.151.190/api/upload.php" >
-    </vue-core-image-upload>
-</div>-->
 
-    <div class="positioning">
+    <div class="positioningbutton">
       <b-button class="button" v-on:click="back" > back </b-button>
       <b-button  class="button" v-on:click="finish" >finish</b-button>
     </div>
@@ -38,7 +39,6 @@ export default {
        area: this.$route.params.area,
        country: this.$route.params.country,
        image: '',
-        src: 'http://img1.vued.vanthink.cn/vued0a233185b6027244f9d43e653227439a.png'
     };
   },
   methods: {
@@ -55,38 +55,52 @@ export default {
         }
       }
     },
-
-    imageuploaded(res) {
-      if (res.errcode == 0) {
-        this.src = res.data.src;
-      }
-    },
-
-  /*components: {
-     'vue-core-image-upload': VueCoreImageUpload,
-   },*/
   }
 
 </script>
 
+
+
+
 <style scoped>
 
-body {
-				font-family: 'Roboto', sans-serif;
-				font-size: 14px;
-                line-height: normal;
-				color: #47525d;
-				background-color: #fff;
+#file{
+  visibility: hidden;
+  width: 1px;
+}
+.item {
+  border: none;
+  position: relative;
+  margin: 10%;
+  padding: 50pt;
+  overflow: hidden;
+}
+.item img {
+  max-width: 500%;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.item:hover img {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
-				margin: 0;
-				padding: 20px;
-
-				width: 560px;
-			}
+.imagestyle{
+  -webkit-mask-box-image: url("../../assets/fileuploader-dragdrop-icon.png");
+  background-color: #393939;
+}
 
 .positioning{
-  margin-top: 100pt;
+  margin-top: 50pt;
   text-align: center
+}
+
+.positioningbutton{
+  margin-top: 50pt;
+  text-align: center;
+  margin-left: 25pt;
 }
 
 </style>
