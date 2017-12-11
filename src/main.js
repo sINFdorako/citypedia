@@ -11,6 +11,7 @@ Vue.use(BootstrapVue);
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { FileUploadService } from 'v-file-upload'
 
 Vue.config.productionTip = false
 
