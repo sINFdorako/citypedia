@@ -5,9 +5,12 @@
 <!--    <b-navbar-brand  id="navbrand" v-on:click="scrollTop" href="#"> </b-navbar-brand> -->
 
       <b-navbar-nav class="mr-auto">
-        <b-nav-item class="hvr-underline-from-center" href="#">A-Z</b-nav-item>
-        <b-nav-item class="hvr-underline-from-center" href="#">Ranking</b-nav-item>
-        <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }">Add City</b-nav-item>
+        <b-nav-item class="hvr-underline-from-center" href="#"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+A-Z</b-nav-item>
+        <b-nav-item class="hvr-underline-from-center" href="#"><i class="fa fa-trophy" aria-hidden="true"></i>
+Ranking</b-nav-item>
+        <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
+Add City</b-nav-item>
       </b-navbar-nav>
       <!-- doubled in class because centering otherwise seems impossible -->
       <b-nav-form id="searchbar" form class="mr-sm-5">

@@ -83,8 +83,11 @@ v-model="nou" :disabled="validated == 0" placeholder="Number of universities" va
 </div>
 
 <div class="positioning">
-<b-button class="button" v-on:click="back" > back </b-button>
-<b-button  class="button" v-on:click="checkinput" >go on</b-button>
+<b-button class="button" v-on:click="back" ><i class="fa fa-caret-left" aria-hidden="true"></i>
+ back </b-button>
+<b-button  class="button" v-on:click="checkinput" >go on <i class="fa fa-caret-right" aria-hidden="true"></i>
+</i>
+</b-button>
 </div>
 
 

@@ -1,8 +1,9 @@
 <template>
   <div>
     <div class="positioning">
-      <b-button class="button" v-on:click="back" > back </b-button>
-      <b-button  class="button" v-on:click="finish" >finish</b-button>
+      <b-button class="button" v-on:click="back" ><i class="fa fa-caret-left" aria-hidden="true"/> back </b-button>
+      <b-button  class="button" v-on:click="finish" >finish <i class="fa fa-check" aria-hidden="true"></i>
+</b-button>
     </div>
   </div>
 </template>

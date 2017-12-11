@@ -6,7 +6,7 @@
       <input id="inputField" class="input" type="text" v-model="input" placeholder="city" value="localStorage.cityname">
       <br>
       <div>
-        <b-button class="button" v-on:click="checkinputcity">go on</b-button>
+        <b-button class="button" v-on:click="checkinputcity">go on <i class="fa fa-caret-right" aria-hidden="true"/></b-button>
       </div>
     </div>
   </div>
