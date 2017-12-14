@@ -63,12 +63,12 @@ export default {
         if ($(window).scrollTop() > 280) {
           $('#nav_bar').addClass('navbar-fixed');
           $('#navbrand').addClass('animationIn');
-          document.getElementById('navbrand').innerHTML = 'Citypedia';
+          //document.getElementById('navbrand').innerHTML = 'Citypedia';
         }
         if ($(window).scrollTop() < 281) {
           $('#nav_bar').removeClass('navbar-fixed');
           $('#navbrand').removeClass('animationIn');
-          document.getElementById('navbrand').innerHTML = '';
+          //document.getElementById('navbrand').innerHTML = '';
         }
       });
     });

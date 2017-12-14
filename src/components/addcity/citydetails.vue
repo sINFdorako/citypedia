@@ -38,17 +38,17 @@
 <hr  />
     <div id="centerCheckbox">
         <b-form-checkbox id="optinfocheckbox"
-                          v-model="isoptional"
+                          v-model="isOptional"
                           value="true"
                           unchecked-value="false">
                           optional info
         </b-form-checkbox>
     </div>
-    <div id="optional" v-if="isoptional == 'true'">
+    <div id="optional" v-if="isOptional == 'true'">
       <hr />
 
 <div id="optionalcheckboxes">
-<b-form-checkbox id="hastransportationcheckbox"
+<b-form-checkbox id="hastrainstationoncheckbox"
 v-model="hasTrainstation"
 value="false"
 unchecked-value="true">
@@ -137,7 +137,11 @@ export default {
        nou: localStorage.nou,
        urate: localStorage.urate,
        //Checkboxes
-       isoptional: 'false',
+       isCapital: localStorage.isCapital,
+       isOptional: localStorage.isOptional,
+       hasLakes: localStorage.hasLakes,
+       hasTrainstation: localStorage.hasTrainstation
+
     };
   },
 
@@ -145,9 +149,16 @@ export default {
     $(document).ready(function() {
       $('#ptextbox').val(localStorage.population);
       $('#aiktextbox').val(localStorage.area);
-      $('avgtemptextbox').val(localStorage.avgtemp)
-      $('noutextbox').val(localStorage.nou)
-      $('uratetextbox').val(localStorage.urate)
+      $('#capitalcheckbox').val(localStorage.isCapital);
+      $('#avgtemptextbox').val(localStorage.avgtemp);
+      $('#noutextbox').val(localStorage.nou);
+      $('#uratetextbox').val(localStorage.urate);
+      $('isOptional').val(localStorage.isOptional);
+      $('#hastrainstationoncheckbox').val(localStorage.hasTrainstation);
+      $('#haslakescheckbox').val(localStorage.hasLakes);
+      $('#avgtemptextbox').val(localStorage.avgtemp);
+      $('#noutextbox').val(localStorage.nou);
+      $('#uratetextbox').val(localStorage.urate);
     });
   },
 
@@ -177,9 +188,13 @@ export default {
            this.$router.push({ path: 'cityphots/' +this.$data.input})
            localStorage.setItem("population", this.$data.population)
            localStorage.setItem("area", this.$data.area)
+           localStorage.setItem("isCapital", this.$data.isCapital)
            localStorage.setItem("avgtemp", this.$data.avgtemp)
            localStorage.setItem("nou", this.$data.nou)
            localStorage.setItem("urate", this.$data.urate)
+           localStorage.setItem("isOptional", this.$data.isOptional)
+           localStorage.setItem("hasTrainstation", this.$data.hasTrainstation)
+           localStorage.setItem("hasLakes", this.$data.hasLakes)
          }
        }
      }
