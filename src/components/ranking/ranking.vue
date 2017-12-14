@@ -39,6 +39,7 @@ export default {
 </script>
 
 <style scoped>
+
 .positioning{
   margin-top: 25pt;
   margin-bottom: 20pt;

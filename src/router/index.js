@@ -45,7 +45,7 @@ export default new Router({
       name: 'ranking',
       component: ranking
     },
-
+    {
       path: '/citydetails/cityphots/:input',
       name: 'cityphots',
       component: cityphots

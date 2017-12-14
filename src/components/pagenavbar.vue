@@ -8,7 +8,7 @@
       <b-navbar-nav class="mr-auto">
         <b-nav-item class="hvr-underline-from-center" href="#"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
 A-Z</b-nav-item>
-        <b-nav-item class="hvr-underline-from-center" href="#"><i class="fa fa-trophy" aria-hidden="true"></i>
+        <b-nav-item class="hvr-underline-from-center" :to="{ path: '/ranking' }"><i class="fa fa-trophy" aria-hidden="true"></i>
 Ranking</b-nav-item>
         <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
 Add City</b-nav-item>
