@@ -5,6 +5,8 @@ import router from '@/components/router'
 import addcity from '@/components/addcity/addcity'
 import citydetails from '@/components/addcity/citydetails'
 import cityphots from '@/components/addcity/cityphots'
+import stadtprofil from '@/components/addcity/stadtprofil'
+
 
 
 
@@ -38,6 +40,11 @@ export default new Router({
       path: '/citydetails/cityphots/:input',
       name: 'cityphots',
       component: cityphots
+    },
+    {
+      path: '/citydetails/cityphots/stadtprofil/:input',
+      name: 'stadtprofil',
+      component: stadtprofil
     },
   ]
 })

@@ -102,9 +102,9 @@ export default {
        checkinput: function(event){
          if(event){
 
-           if (this.$data.population == null || this.$data.population == '' || this.$data.area == null || this.$data.area == '' || this.$data.country == null || this.$data.country == '') {
+           /*if (this.$data.population == null || this.$data.population == '' || this.$data.area == null || this.$data.area == '' || this.$data.country == null || this.$data.country == '') {
              alert("Please fill in the empty fields")
-           }else{
+           }else{*/
            this.$router.push({ path: 'cityphots/' +this.$data.input})
            localStorage.setItem("country", this.$data.country)
            localStorage.setItem("population", this.$data.population)
@@ -113,7 +113,7 @@ export default {
        }
      }
    }
-}
+
 
 </script>
 

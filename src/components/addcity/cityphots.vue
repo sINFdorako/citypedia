@@ -2,9 +2,10 @@
   <div>
 
     <h1 style="text-align: center; margin-top: 30pt;">Add some pictures of {{input}}</h1>
+    <b-button class="button" v-on:click="stadtprofil">Stadtprofil</b-button>
 
     <div v-show="$refs.upload && $refs.upload.dropActive" class="drop-active">
-  <h3>Drop files to upload</h3>
+  <h3>Drop files to upload</h3> <file-upload :drop="true"></file-upload>
 </div>
 <div class="upload" v-show="!isOption" >
   <div class="table-responsive" >
@@ -85,6 +86,7 @@
       Uploaded: {{$refs.upload ? $refs.upload.uploaded : true}},
       Drop active: {{$refs.upload ? $refs.upload.dropActive : false}}
     </div>
+    <hr />
     <div class="btn-group">
       <file-upload
         class="btn btn-primary dropdown-toggle"
@@ -111,10 +113,10 @@
       <div class="dropdown-menu">
         <label class="dropdown-item" :for="name">Add files</label>
         <a class="dropdown-item" href="#" @click="onAddFolader">Add folder</a>
-        <a class="dropdown-item" href="#" @click.prevent="addData.show = true">Add data</a>
       </div>
     </div>
-    <button type="button" class="btn btn-success" v-if="!$refs.upload || !$refs.upload.active" @click.prevent="$refs.upload.active = true">
+    <hr>
+    <button style="text-align: center !important;"type="button" class="btn btn-success" v-if="!$refs.upload || !$refs.upload.active" @click.prevent="$refs.upload.active = true">
       <i class="fa fa-arrow-up" aria-hidden="true"></i>
       Start Upload
     </button>
@@ -196,6 +198,12 @@ export default {
 
   methods: {
 
+    stadtprofil: function(event) {
+      if(event){
+        this.$router.push({ path: 'stadtprofil/' +this.$data.input})
+      }
+    },
+
       back: function(event) {
         if(event){
           this.$router.go(-1)
@@ -206,10 +214,29 @@ export default {
         if(event){
           alert("are you sure you are finished?")
         }
-      }
-    },
+      },
+
     inputFilter(newFile, oldFile, prevent) {
     if (newFile && !oldFile) {
+      $.ajax({
+      url: "http://localhost:8000/#/",
+      type: "POST",
+      data: addData,
+      processData: false,
+      contentType: false,
+      dataType: "jpeg",
+    xhr: function(){
+        var xhr = $.ajaxSettings.xhr() ;
+        xhr.upload.onload = function(){ console.log('Upload done.') } ;
+        return xhr ;
+    },
+    success: function(response) {
+       console.log(response.status); // dafür muss man natürlich einen Status zurückgeben. Andernfalls tut man eben nichts.
+    },
+    error: function() { console.log("General error occured", "e"); },
+    complete: function() { /* Fertig. */}
+});
+
       // Before adding a file
       // 添加文件前
       // Filter system files or hide files
@@ -280,6 +307,10 @@ export default {
     if (!newFile && oldFile) {
       // remove
       if (oldFile.success && oldFile.response.id) {
+        $.ajax({
+          type: 'DELETE',
+          url: 'http://localhost:8000/#/' +oldFile.response.id,
+        })
         // $.ajax({
         //   type: 'DELETE',
         //   url: '/upload/delete?id=' + oldFile.response.id,
@@ -339,20 +370,10 @@ export default {
       input.directory = false
       input.webkitdirectory = false
     }
-  },
-  onAddData() {
-    this.addData.show = false
-    if (!this.$refs.upload.features.html5) {
-      this.alert('Your browser does not support')
-      return
-    }
-    let file = new window.File([this.addData.content], this.addData.name, {
-      type: this.addData.type,
-    })
-    this.$refs.upload.add(file)
   }
 }
 
+}
 
 </script>
 
