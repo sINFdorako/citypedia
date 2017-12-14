@@ -12,7 +12,7 @@
 
       <b-navbar-nav>
         <b-nav-item href="#">A-Z</b-nav-item>
-        <b-nav-item href="#">Ranking</b-nav-item>
+        <b-nav-item :to="{ path: '/ranking' }">Ranking</b-nav-item>
         <b-nav-item href="#">About</b-nav-item>
         <b-nav-item :to="{ path: '/addcity' }">Add City</b-nav-item>
       </b-navbar-nav>
