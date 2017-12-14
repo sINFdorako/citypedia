@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="container">
     <h1 class="left">Welcome</h1>
     <p class="left">
       Hi! Welcome to <strong>Citypedia</strong>.<br />
@@ -8,7 +8,7 @@
     <p class="right">
       So I will just take the dummy text even if its boring af. <br />
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
       aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
       nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
@@ -27,6 +27,10 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.center{
+  text-align: center;
+}
+
 .left {
   text-align: left;
   margin-right: 60%;
@@ -36,10 +40,10 @@
   margin-left: 40%;
 }
 
-div {
+#container {
   margin-top: 17px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
   font-size: 13pt;
   font-family: 'Montserrat', sans-serif;
 }

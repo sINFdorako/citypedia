@@ -1,16 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import VueResource from 'vue-resource'
 import router from '@/components/router'
 import addcity from '@/components/addcity/addcity'
 import citydetails from '@/components/addcity/citydetails'
+
 import ranking from '@/components/ranking/ranking'
+
+import cityphots from '@/components/addcity/cityphots'
+
 
 
 Vue.use(router)
 Vue.use(Router)
+
+Vue.use(VueResource)
 Vue.use(addcity)
 Vue.use(citydetails)
+
 Vue.use(ranking)
+Vue.use(cityphots)
 
 export default new Router({
   routes: [
@@ -31,9 +40,15 @@ export default new Router({
 
     },
     {
+
       path: '/ranking',
       name: 'ranking',
       component: ranking
+    },
+
+      path: '/citydetails/cityphots/:input',
+      name: 'cityphots',
+      component: cityphots
     },
   ]
 })
