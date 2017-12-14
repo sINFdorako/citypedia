@@ -2,6 +2,7 @@
 
   <b-navbar id="nav_bar" toggleable="md" type="dark" variant="dark">
 
+
 <!--    <b-navbar-brand  id="navbrand" v-on:click="scrollTop" href="#"> </b-navbar-brand> -->
 
       <b-navbar-nav class="mr-auto">
@@ -11,6 +12,7 @@ A-Z</b-nav-item>
 Ranking</b-nav-item>
         <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
 Add City</b-nav-item>
+
       </b-navbar-nav>
       <!-- doubled in class because centering otherwise seems impossible -->
       <b-nav-form id="searchbar" form class="mr-sm-5">

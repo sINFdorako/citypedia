@@ -12,13 +12,16 @@ import pagenavbar from '@/components/pagenavbar'
 import banner from '@/components/banner'
 import addcity from '@/components/addcity/addcity'
 import citydetails from '@/components/addcity/citydetails'
+
+import ranking from '@/components/ranking/ranking'
+
 import cityphots from '@/components/addcity/cityphots'
 import ownfooter from '@/components/ownfooter'
 
 
 export default {
   name: 'app',
-  components: {pagenavbar, banner, addcity, citydetails, cityphots, ownfooter}
+  components: {pagenavbar, banner, addcity, citydetails, cityphots, ranking, ownfooter}
 }
 </script>
 
