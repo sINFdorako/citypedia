@@ -194,20 +194,28 @@ export default {
 }
 
 .file-progress{
-  padding: 10px;
-  color: green;
-  background-color: #393939;
+  padding: 2px;
+  background-color: lightgreen;
 }
 
 .file-size{
-  padding: 10px;
-  color: green;
+  padding: 5px;
+  color: white;
   background-color: #393939;
+  display: block;
+  border: 3px;
+  border-radius: 4px;
+  border-color: white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-style: solid double;
 }
 
 .file-status{
-  padding: 10px;
-  color: yellow;
+  display: block;
+  padding: 5px;
+  color: green;
   background-color: #393939;
 }
 </style>
