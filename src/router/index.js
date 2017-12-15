@@ -7,15 +7,19 @@ import citydetails from '@/components/addcity/citydetails'
 import cityphots from '@/components/addcity/cityphots'
 import stadtprofil from '@/components/addcity/stadtprofil'
 
+import ranking from '@/components/ranking/ranking'
 
 
 
 
 Vue.use(router)
 Vue.use(Router)
+
 Vue.use(VueResource)
 Vue.use(addcity)
 Vue.use(citydetails)
+
+Vue.use(ranking)
 Vue.use(cityphots)
 
 export default new Router({
@@ -35,6 +39,12 @@ export default new Router({
       name: 'citydetails',
       component: citydetails
 
+    },
+    {
+
+      path: '/ranking',
+      name: 'ranking',
+      component: ranking
     },
     {
       path: '/citydetails/cityphots/:input',
