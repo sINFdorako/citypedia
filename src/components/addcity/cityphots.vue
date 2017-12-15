@@ -8,12 +8,12 @@
     <div style="margin-top:100px;">
 
 
-    <vue-clip :options="options">
+    <vue-clip :options="options" ref="vc" >
         <template slot="clip-uploader-action">
           <div class="uploader-action">
             <div class="dz-message">
               Drag and Drop files here or browse
-              <div style="margin-left: 400pt;">
+              <div style="margin-left: 370pt;">
                 <span class="widthspan">
                   <div class="item">
                     <img class="imagestyle" alt="file upload png">
@@ -27,27 +27,29 @@
 
         <template slot="clip-uploader-body" slot-scope="props">
           <div class="uploader-files">
-            <div class="uploader-file" v-for="file in props.files">
-              <div class="file-avatar">
+            <div class="uploader-file" v-for="file in props.files" style="background-color: lightgray; margin-left: 42pt; margin-right: 40pt;">
+              <div class="file-avatar" style="padding-top: 20px; margin-right:750pt; margin-left: 43pt; padding: 1px; margin-top:0; background-color:#393939;">
                 <img v-bind:src="file.dataUrl" alt="">
               </div>
-              <div class="file-details">
-                <div class="file-name">
+              <div class="file-details" >
+                <div class="file-name" style="margin-right: 750pt; margin-left: 43pt; padding: 15px; margin-top:0; background-color:#393939; color: #ffffff" >
                   {{ file.name }}
                 </div>
-
                 <div class="file-progress" v-if="file.status !== 'error' && file.status !== 'success'">
                   <span class="progress-indicator" v-bind:style="{width: file.progress + '%'}"></span>
                 </div>
 
 
-                <div class="file-meta" v-else>
-                  <span class="file-size">{{ file.size }}</span>
-                  <span class="file-status">{{ file.status }}</span>
+                <div class="file-meta" v-else style="margin-top: -38pt;">
+                  <span class="file-size" style=" background-color:#393939; color: #ffffff">datasize: {{ file.size }}</span>
+                  <span class="file-status"style=" background-color:#393939;">{{ file.status }}</span>
+                  <button v-on:click="removeFile(file)" style=" background-color:#393939; color:red; padding: 4px;" class="button">delete</button>
                 </div>
+                <hr />
               </div>
             </div>
           </div>
+
         </template>
 
     </vue-clip>
@@ -100,8 +102,13 @@ export default {
           this.$router.go(-1)
         }
       },
+
+    removeFile(file){
+        this.$refs.vc.removeFile(file)
+    }
   }
 }
+
 
 
 
@@ -164,7 +171,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 
@@ -173,17 +179,19 @@ export default {
 }
 
 .uploader-action{
-  padding: 20px;
-  background: #393939;
+  padding: 2px;
+  width: 1250px;
+  margin-left: 73pt;
+  background-color: #393939;
   cursor: pointer;
-  opacity: 0,2;
 }
 
 .uploader-action .dz-message{
   color: #ffffff;
+  font-weight: bold;
   text-align: center;
-  padding: 20px 40px;
-  border: 3px dashed #ffffff;
+  padding: 10px 30px;
+  border: 2px dashed #ffffff;
   border-radius: 4px;
   font-size: 16px;
 }
@@ -202,18 +210,10 @@ export default {
   padding: 5px;
   color: white;
   background-color: #393939;
-  display: block;
-  border: 3px;
-  border-radius: 4px;
-  border-color: white;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  border-style: solid double;
 }
 
 .file-status{
-  display: block;
+  width: 1250px;
   padding: 5px;
   color: green;
   background-color: #393939;
