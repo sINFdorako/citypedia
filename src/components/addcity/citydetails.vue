@@ -177,7 +177,7 @@ export default {
        },
 
        checkinput: function(event){
-         if(event){
+         if(event) {
 
            if ( this.$data.population == null
              || this.$data.population == ''
@@ -199,6 +199,9 @@ export default {
        }
      }
    }
+ }
+
+
 
 
 </script>

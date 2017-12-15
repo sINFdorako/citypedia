@@ -59,7 +59,7 @@
 
     <div class="positioningbutton">
       <b-button class="button" v-on:click="back" > <i class="fa fa-caret-left" aria-hidden="true"/> back </b-button>
-      <b-button class="button" v-on:click="stadtprofil">Show Preview<i class="fa fa-check" aria-hidden="true"></b-button>
+      <b-button class="button" v-on:click="stadtprofil">Show Preview<i class="fa fa-check" aria-hidden="true"/></b-button>
 
     </div>
 
