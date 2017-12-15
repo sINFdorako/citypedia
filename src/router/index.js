@@ -4,10 +4,11 @@ import VueResource from 'vue-resource'
 import router from '@/components/router'
 import addcity from '@/components/addcity/addcity'
 import citydetails from '@/components/addcity/citydetails'
+import cityphots from '@/components/addcity/cityphots'
+import stadtprofil from '@/components/addcity/stadtprofil'
 
 import ranking from '@/components/ranking/ranking'
 
-import cityphots from '@/components/addcity/cityphots'
 
 
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/citydetails/cityphots/:input',
       name: 'cityphots',
       component: cityphots
+    },
+    {
+      path: '/citydetails/cityphots/stadtprofil/:input',
+      name: 'stadtprofil',
+      component: stadtprofil
     },
   ]
 })

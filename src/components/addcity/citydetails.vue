@@ -199,7 +199,7 @@ export default {
        }
      }
    }
-}
+
 
 </script>
 
