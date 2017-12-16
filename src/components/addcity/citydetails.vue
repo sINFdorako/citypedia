@@ -221,8 +221,9 @@ export default {
 #flag{
   height: 30px;
   margin-left: 5px;
-  padding-bottom: 3px;
+  margin-bottom: 5px;
   width: auto;
+  border: solid black 1px;
 }
 
 #centerCheckbox {
