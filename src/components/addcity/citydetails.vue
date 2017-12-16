@@ -164,7 +164,7 @@ export default {
 
    methods: {
      saveValue: function(){
-       var dropdownindex = $('#dropdownlist').find(":selected").index();
+       let dropdownindex = $('#dropdownlist').find(":selected").index();
        var type = document.getElementById("dropdownlist").value;
        this.$data.validated = 1;
        localStorage.setItem("country",type);
@@ -177,12 +177,14 @@ export default {
        },
 
        checkinput: function(event){
+         let dropdownindex = $('#dropdownlist').find(":selected").index();
+
          if(event) {
 
            if ( this.$data.population == null
              || this.$data.population == ''
              || this.$data.area == null
-             || this.$data.area == '') {
+             || this.$data.area == '' || dropdownindex == 0) {
              alert("Please fill in the empty fields")
            }else{
            this.$router.push({ path: 'cityphots/' +this.$data.input})
@@ -231,6 +233,10 @@ export default {
 .positioning{
   padding-top: 20pt;
   padding-bottom: 20pt;
+  text-align: center;
+}
+
+select, option {
   text-align: center;
 }
 

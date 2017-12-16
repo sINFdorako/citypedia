@@ -2,7 +2,7 @@
   <div>
     <b-jumbotron class="unselectable" id="toptag" >
       <template slot="header">
-        <button class="link" v-on:click="toHome">Citypedia</button>
+        <button id="fonti" class="link" v-on:click="toHome">Citypedia</button>
       </template>
     </b-jumbotron>
   </div>
@@ -21,6 +21,9 @@ export default {
 
 <style scoped>
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 .link {
   background: none;
   border: none;
@@ -35,7 +38,10 @@ export default {
     -ms-user-select: none;
     user-select: none;
 }
-
+#fonti{
+  font-family: 'Montserrat';
+  color: #393939;
+}
 #toptag {
   padding-top: 20px;
   text-align: left;
@@ -43,6 +49,5 @@ export default {
   background-image: url("../assets/background.png");
   width: 100%;
   height: 280px;
-  font-family: 'Montserrat', sans-serif;
 }
 </style>
