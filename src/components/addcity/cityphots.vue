@@ -13,7 +13,7 @@
           <div class="uploader-action">
             <div class="dz-message">
               Drag and Drop files here or browse
-              <div style="margin-left: 370pt;">
+              <div>
                 <span class="widthspan">
                   <div class="item">
                     <img class="imagestyle" alt="file upload png">
@@ -27,28 +27,25 @@
 
         <template slot="clip-uploader-body" slot-scope="props">
           <div class="uploader-files">
-            <div class="uploader-file" v-for="file in props.files" style="background-color: lightgray; margin-left: 42pt; margin-right: 40pt;">
-              <div class="file-avatar" style="padding-top: 20px; margin-right:750pt; margin-left: 43pt; padding: 1px; margin-top:0; background-color:#393939;">
+            <div class="uploader-file" v-for="file in props.files">
+              <div class="file-avatar" id="avatarsize">
                 <img v-bind:src="file.dataUrl" alt="">
               </div>
               <div class="file-details" >
-                <div class="file-name" style="margin-right: 750pt; margin-left: 43pt; padding: 15px; margin-top:0; background-color:#393939; color: #ffffff" >
+                <div id="colorsize"class="file-name">
                   {{ file.name }}
                 </div>
                 <div class="file-progress" v-if="file.status !== 'error' && file.status !== 'success'">
                   <span class="progress-indicator" v-bind:style="{width: file.progress + '%'}"></span>
                 </div>
 
-
-                <div class="file-meta" v-else style="margin-top: -38pt;">
-                  <span class="file-size" style=" background-color:#393939; color: #ffffff">datasize: {{ file.size }}</span>
-                  <span class="file-status"style=" background-color:#393939;">{{ file.status }}</span>
-                  <button v-on:click="removeFile(file)" style=" background-color:#393939; color:red; padding: 4px;" class="button">delete</button>
+                <div class="file-meta" id="colorbg" v-else >
+                  <span class="file-status">{{ file.status }}</span>
+                  <b-button style="background-color: red !important;" v-on:click="removeFile(file)" class="button">delete</b-button>
                 </div>
-                <hr />
               </div>
             </div>
-          </div>
+        </div>
 
         </template>
 
@@ -69,10 +66,6 @@
 
 
 <script>
-
-import Cropper from 'cropperjs'
-import ImageCompressor from '@xkeshi/image-compressor'
-import FileUpload from 'vue-upload-component'
 
 export default {
   name: 'cityphots',
@@ -143,11 +136,11 @@ export default {
 }
 
 .imagestyle{
-  -webkit-mask-box-image: url("../../assets/fileuploader-dragdrop-icon.png");
+  -webkit-mask-box-image: url("../../assets/_upload_image-512.png");
   background-color: #ffffff;
   display: block;
   width: 1%;
-  margin: 2%;
+  margin: auto;
   padding: 5%;
 }
 
@@ -181,25 +174,35 @@ export default {
 
 .uploader-action{
   padding: 2px;
-  width: 1250px;
-  margin-left: 73pt;
+  width: 800px;
+  height: 250px;
+  margin: auto;
   background-color: #393939;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-.uploader-action .dz-message{
+.uploader-action{
   color: #ffffff;
   font-weight: bold;
   text-align: center;
-  padding: 10px 30px;
-  border: 2px dashed #ffffff;
-  border-radius: 4px;
-  font-size: 16px;
+  border: 3px dashed #ffffff;
+  border-radius: 8px;
 }
 
-.uploader-files{
-  flex: 1;
-  padding: 40px;
+.dz-message{
+  margin-top: 3pt;
+  font-size: 20px !important;
+}
+
+.uploader-file{
+  width: 800px;
+  height: 255px;
+  background-color: lightgrey;
+  text-align:center;
+  border-radius: 8px;
+  border-color: yellow;
+  margin: auto;
 }
 
 .file-progress{
@@ -207,16 +210,45 @@ export default {
   background-color: lightgreen;
 }
 
-.file-size{
-  padding: 5px;
-  color: white;
-  background-color: #393939;
-}
-
 .file-status{
-  width: 1250px;
   padding: 5px;
   color: green;
+}
+
+#colorsize{
+  background-color:#393939;
+  width: 250px;
+  height: 60px;
+}
+
+.file-name{
+  color: #ffffff;
+  margin-top: 0;
+  padding: 5px;
+  margin: auto;
+  margin-top: 2pt;
+}
+
+.file-avatar{
+margin: auto;
+margin-top: 12pt;
+padding-top: 13pt;
+}
+
+#avatarsize{
   background-color: #393939;
+  width: 250px;
+  height: 150px;
+}
+
+.file-meta{
+  margin: auto;
+  margin-top: 2pt;
+}
+
+#colorbg{
+  background-color: #393939;
+  width: 250px;
+  height: 40px;
 }
 </style>
