@@ -16,14 +16,14 @@ import citydetails from '@/components/addcity/citydetails'
 import ranking from '@/components/ranking/ranking'
 
 import cityphots from '@/components/addcity/cityphots'
-import stadtprofil from '@/components/addcity/stadtprofil'
+import checkinputs from '@/components/addcity/checkinputs'
 
 import ownfooter from '@/components/ownfooter'
 
 
 export default {
   name: 'app',
-  components: {pagenavbar, banner, addcity, citydetails, cityphots, ranking, ownfooter, stadtprofil}
+  components: {pagenavbar, banner, addcity, citydetails, cityphots, ranking, ownfooter, checkinputs}
 }
 </script>
 

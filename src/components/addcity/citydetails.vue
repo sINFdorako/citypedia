@@ -50,13 +50,13 @@
 <div id="optionalcheckboxes">
 <b-form-checkbox id="hastrainstationoncheckbox"
 v-model="hasTrainstation"
-value="false"
-unchecked-value="true">
+value="true"
+unchecked-value="false">
 Has train station
 </b-form-checkbox> <b-form-checkbox id="haslakescheckbox"
 v-model="hasLakes"
-value="false"
-unchecked-value="true">
+value="true"
+unchecked-value="false">
 Has lakes
 </b-form-checkbox>
         </div>

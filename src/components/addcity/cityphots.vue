@@ -59,7 +59,7 @@
 
     <div class="positioningbutton">
       <b-button class="button" v-on:click="back" > <i class="fa fa-caret-left" aria-hidden="true"/> back </b-button>
-      <b-button class="button" v-on:click="stadtprofil">Show Preview<i class="fa fa-check" aria-hidden="true"/></b-button>
+      <b-button class="button" v-on:click="checkinputs">Show Preview<i class="fa fa-check" aria-hidden="true"/></b-button>
 
     </div>
 
@@ -92,9 +92,9 @@ export default {
 
   methods: {
 
-    stadtprofil: function(event) {
+    checkinputs: function(event) {
       if(event){
-        this.$router.push({ path: 'stadtprofil/' +this.$data.input})
+        this.$router.push({ path: 'checkinputs/' +this.$data.input})
       }
     },
 
