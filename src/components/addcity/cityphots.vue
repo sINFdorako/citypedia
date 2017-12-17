@@ -77,7 +77,7 @@ export default {
        area: this.$route.params.area,
        country: this.$route.params.country,
        options:{
-         url: 'http://7eda40f7.ngrok.io/uploadHere'
+         url: 'http://5d5b3ffd.ngrok.io/uploadHere'
        }
 }
 },
@@ -98,9 +98,14 @@ export default {
       },
 
     removeFile(file){
-        this.$refs.vc.removeFile(file)
+      this
+      .$http
+      .post(`delete/${file.customAttributes.id}`)
+      .then(console.log)
+      .catch(console.error)
     }
-  }
+  },
+
 }
 
 
