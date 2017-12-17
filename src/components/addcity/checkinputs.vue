@@ -18,7 +18,7 @@
 </div>
 
 
-<h2 style="font-family: 'Oswald', sans-serif; width: 800px; text-align: center; margin: auto; background-color:#393939; color: white; padding: 20px; border-radius: 8px;">optional inputs</h2>
+<h2 v-if="isOptional == 'true'" style="font-family: 'Oswald', sans-serif; width: 800px; text-align: center; margin: auto; background-color:#393939; color: white; padding: 20px; border-radius: 8px;">optional inputs</h2>
 <div class="second" v-if="isOptional == 'true'">
   <table>
     <ul>
