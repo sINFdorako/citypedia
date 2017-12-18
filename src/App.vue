@@ -20,7 +20,6 @@ import checkinputs from '@/components/addcity/checkinputs'
 
 import ownfooter from '@/components/ownfooter'
 
-
 export default {
   name: 'app',
   components: {pagenavbar, banner, addcity, citydetails, cityphots, ranking, ownfooter, checkinputs}
