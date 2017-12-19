@@ -44,7 +44,7 @@
 
 </div>
 
-<h2 class="positioning" style="width: 800px; text-align:center; margin: auto;">If you have found <i class="fa fa-search" aria-hidden="true"></i> an issue please make sure to go back and correct him, otherwise click the finish button and we will check <i class="fa fa-check" aria-hidden="true"/> your new cityprofile before publishing.</h2>
+<h2 class="positioning" style="width: 800px; text-align:center; margin: auto;">If you have found <i class="fa fa-search" aria-hidden="true"></i> an issue please make sure to go back and correct it, otherwise click the finish button and we will check <i class="fa fa-check" aria-hidden="true"/> your new cityprofile before publishing.</h2>
 
 <div class="positioning" style="margin-top: 15pt;">
   <b-button class="button" v-on:click="back" > <i class="fa fa-caret-left" aria-hidden="true"/> go back and correct</b-button>
