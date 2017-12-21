@@ -178,6 +178,7 @@ export default {
        },
 
        checkinput: function(event){
+         let dropdownindex = $('#dropdownlist').find(":selected").index();
 
          if(event) {
 
