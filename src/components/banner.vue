@@ -1,5 +1,6 @@
 <template>
   <div>
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
     <b-jumbotron class="unselectable" id="toptag" >
       <template slot="header">
         <button id="fonti" class="link" v-on:click="toHome">Citypedia</button>
@@ -23,6 +24,7 @@ export default {
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+
 
 .link {
   background: none;

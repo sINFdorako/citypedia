@@ -112,11 +112,10 @@ export default {
   width: 800px;
   padding: 10px;
   background-color: none;
-  text-align:center;
   border-radius: 8px;
   margin: auto;
   margin-top: 0;
-  background-color: lightgrey;
+  background-color: #f7f6f5;
 }
 
 </style>
