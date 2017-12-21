@@ -100,7 +100,7 @@ export default {
     removeFile(file){
       this
       .$http
-      .post(`delete/${file.customAttributes.id}`)
+      .post(`delete/${file.dataUrl.id}`)
       .then(console.log)
       .catch(console.error)
     }
