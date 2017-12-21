@@ -4,12 +4,7 @@
   <div class="foot">
     <div class="card text-center">
       <div class="card-header" style="background-color: #f7f6f5; font-family: 'Oswald', cursiv; font-size: 185%;">
-    Citypedia
-    </div>
-    <div class="card-body" style="background-color:#393939; color: white;">
-    <h4 class="card-title">Get all important information about a city on point!</h4>
-    <b-button v-on:click="toHome" class="btn btn-primary"><i class="fa fa-chevron-up" aria-hidden="true"></i>
-</b-button>
+    Citypedia   <i id="uptotop" v-on:click="toHome" class="fa fa-chevron-up" aria-hidden="true"></i>
     </div>
   </div>
 </div>
@@ -35,6 +30,12 @@ export default {
 
 .foot{
   margin-top: 480px;
+}
+
+#uptotop {
+  float:right;
+  height: 3px;
+  width: auto;
 }
 
 </style>
