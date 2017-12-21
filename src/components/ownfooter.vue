@@ -4,11 +4,12 @@
   <div class="foot">
     <div class="card text-center">
       <div class="card-header" style="background-color: #f7f6f5; font-family: 'Oswald', cursiv; font-size: 185%;">
-    Citypedia 
+    Citypedia
     </div>
     <div class="card-body" style="background-color:#393939; color: white;">
     <h4 class="card-title">Get all important information about a city on point!</h4>
-    <b-button v-on:click="toHome" class="btn btn-primary">Go up</b-button>
+    <b-button v-on:click="toHome" class="btn btn-primary"><i class="fa fa-chevron-up" aria-hidden="true"></i>
+</b-button>
     </div>
   </div>
 </div>

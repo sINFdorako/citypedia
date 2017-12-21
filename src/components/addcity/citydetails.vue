@@ -3,9 +3,6 @@
 
     <h1 style="text-align: center; margin-top: 20pt;"> More details about {{input}}   <img id="flag"/></h1>
 
-<div id="flagdiv">
-
-</div>
     <div class="positioning">
       <select id="dropdownlist" class="input" v-on:change="saveValue">
         <option selected disabled value="">Country</option>
