@@ -169,6 +169,7 @@ export default {
        this.$data.validated = 1;
        localStorage.setItem("country",type);
        document.getElementById("flag").src=this.countries[dropdownindex-1].flag;
+       $('#flag').addClass('bordered');
      },
      back: function(event) {
          if(event){
@@ -177,7 +178,6 @@ export default {
        },
 
        checkinput: function(event){
-         let dropdownindex = $('#dropdownlist').find(":selected").index();
 
          if(event) {
 
@@ -218,12 +218,15 @@ export default {
   text-align: center;
 }
 
+.bordered {
+  border: solid black 1px;
+}
+
 #flag{
   height: 30px;
   margin-left: 5px;
   margin-bottom: 5px;
   width: auto;
-  border: solid black 1px;
 }
 
 #centerCheckbox {
