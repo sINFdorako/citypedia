@@ -29,7 +29,6 @@ export default {
 <style scoped>
 
 .foot{
-  margin-top: 480px;
 }
 
 #uptotop {

@@ -2,7 +2,7 @@
   <div id="app">
     <banner/>
     <pagenavbar/>
-    <router-view/>
+    <router-view class="router-view"/>
     <ownfooter/>
   </div>
 </template>
@@ -36,6 +36,9 @@ export default {
   outline: 0;
 }
 
+.router-view{
+  min-height: 750px;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
