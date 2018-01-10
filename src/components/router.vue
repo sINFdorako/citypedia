@@ -1,20 +1,13 @@
 <template>
 <div id="container">
     <h1 class="left">Welcome</h1>
-    <p class="left">
+    <p class="center">
       Hi! Welcome to <strong>Citypedia</strong>.<br />
-      I wish I could add text that makes sense and fills the page so that you can scroll down to see how the navbar behaves. But I can't!
+    Here you can get different stats about Cities.<br/>
+  <strong>Looking for a special City?</strong>
+  <h2 class="center"> Write it in the Searchbar below!</h2>
     </p>
-    <p class="right">
-      So I will just take the dummy text even if its boring af. <br />
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <p class="left">
-      damn, the dummy text takes to much space at the html. Im gonna use a picture instead!
-    </p>
+
     <img src="../assets/filler.png" />
     <div>
    <nav class="navbar navbar-default">
@@ -90,6 +83,7 @@ export default {
 
 .center{
   text-align: center;
+  font-size: 20pt;
 }
 
 .left {
@@ -99,6 +93,9 @@ export default {
 .right {
   text-align: right;
   margin-left: 40%;
+}
+h2 {
+  text-decoration: underline;
 }
 
 #container {
