@@ -65,6 +65,7 @@ export default {
   data:
   function(){
     return{
+      cityname: localStorage.cityname,
       population: localStorage.population,
       area: localStorage.area,
       avgtemp: localStorage.avgtemp,
@@ -89,8 +90,9 @@ export default {
 
   checkinputs: function(event){
     if(event){
-      $.post("http://localhost:3000/api/cities", {population: localStorage.getItem("population") });
-    //  localStorage.clear();
+      $.post("http://localhost:3000/api/cities", {cityname: localStorage.getItem("cityname"), population: localStorage.getItem("population"), area: localStorage.getItem("area"),
+              avgtemp: localStorage.getItem("avgtemp"), nou: localStorage.getItem("nou"), urate: localStorage.getItem("urate"), isCapital: localStorage.getItem("isCapital"), hasLakes: localStorage.getItem("hasLakes"), hasTrainstation: localStorage.getItem("hasTrainstation")})
+  //  localStorage.clear();
     }
   }
 }

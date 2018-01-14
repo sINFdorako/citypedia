@@ -124,6 +124,7 @@ export default {
   function(){
     return {
        input: this.$route.params.input,
+       
        countries: [],
        country: localStorage.country,
        validated: 0,
