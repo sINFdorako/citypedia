@@ -89,8 +89,8 @@ export default {
 
   checkinputs: function(event){
     if(event){
-      alert("Thank you, we will check your cityprofile within the next 24 hours!")
-      localStorage.clear();
+      $.post("http://localhost:3000/api/cities", {population: localStorage.getItem("population") });
+    //  localStorage.clear();
     }
   }
 }
