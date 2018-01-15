@@ -124,7 +124,6 @@ export default {
   function(){
     return {
        input: this.$route.params.input,
-
        countries: [],
        country: localStorage.country,
        validated: 0,
@@ -163,7 +162,7 @@ export default {
    methods: {
      saveValue: function(){
        let dropdownindex = $('#dropdownlist').find(":selected").index();
-       var type = document.getElementById("dropdownlist").value;
+       var type = $("#dropdownlist option:selected").text();
        this.$data.validated = 1;
        localStorage.setItem("country",type);
        document.getElementById("flag").src=this.countries[dropdownindex-1].flag;

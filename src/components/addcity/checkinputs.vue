@@ -7,6 +7,8 @@
 <div class="positioning, second" >
 <table>
   <ul>
+      <li><span><h3>Country: {{country}}</h3></span> <br /></li>
+
     <li><span><h3>Population: {{population}}</h3></span> <br /></li>
     <hr />
 
@@ -69,6 +71,7 @@ export default {
   function(){
     return{
       cityname: localStorage.cityname,
+      country: localStorage.country,
       population: localStorage.population,
       area: localStorage.area,
       avgtemp: localStorage.avgtemp,
@@ -94,7 +97,7 @@ export default {
 
   checkinputs: function(event){
     if(event){
-      $.post("http://localhost:3000/api/cities", {cityname: localStorage.getItem("cityname"), population: localStorage.getItem("population"), area: localStorage.getItem("area"),
+      $.post("http://localhost:3000/api/cities", {cityname: localStorage.getItem("cityname"), country: localStorage.getItem("country"), population: localStorage.getItem("population"), area: localStorage.getItem("area"),
               avgtemp: localStorage.getItem("avgtemp"), nou: localStorage.getItem("nou"), urate: localStorage.getItem("urate"), isCapital: localStorage.getItem("isCapital"), hasLakes: localStorage.getItem("hasLakes"), hasTrainstation: localStorage.getItem("hasTrainstation"), link: localStorage.getItem("link")})
   //  localStorage.clear();
     }
