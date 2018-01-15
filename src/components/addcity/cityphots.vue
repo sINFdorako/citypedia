@@ -3,9 +3,12 @@
 
     <h1 style="text-align: center; margin-top: 30pt;">Add some pictures of {{input}}</h1>
 
+    <div class="positioning">
+      <h3>Paste your link here</h3>
+      <input id="linkbox" class="input" type="text" v-model="link"  placeholder="paste your link here"  value="localStorage.link">
+    </div>
 
-
-    <div style="margin-top:100px;">
+    <!-- <div style="margin-top:100px;">
 
 
     <vue-clip :options="options" ref="vc" >
@@ -53,19 +56,21 @@
 
     </div>
 
+  -->
 
-    <div class="positioningbutton">
+
+    <div class="positioning">
       <b-button class="button" v-on:click="back" > <i class="fa fa-caret-left" aria-hidden="true"/> back </b-button>
       <b-button class="button" v-on:click="checkinputs">Show Preview<i class="fa fa-check" aria-hidden="true"/></b-button>
 
     </div>
 
   </div>
-
 </template>
 
 
 <script>
+
 
 export default {
   name: 'cityphots',
@@ -76,18 +81,28 @@ export default {
        population: this.$route.params.population,
        area: this.$route.params.area,
        country: this.$route.params.country,
-       options:{
+       link: localStorage.link,
+
+       /*options:{
          url: 'http://5d5b3ffd.ngrok.io/uploadHere'
-       }
+       }*/
 }
 },
+
 
 
   methods: {
 
     checkinputs: function(event) {
       if(event){
-        this.$router.push({ path: 'checkinputs/' +this.$data.input})
+        var inputField = document.getElementById("linkbox").value;
+
+        if (this.$data.link == null || this.$data.link == "") {
+          alert("Please add a link before you go on!")
+    }else{
+      this.$router.push({ path: 'checkinputs/' +this.$data.input})
+      localStorage.setItem("link", this.$data.link)
+  }
       }
     },
 
@@ -97,18 +112,10 @@ export default {
         }
       },
 
-    removeFile(file){
-      this
-      .$http
-      .post(`delete/${file.dataUrl.id}`)
-      .then(console.log)
-      .catch(console.error)
-    }
-  },
 
 }
 
-
+}
 
 
 </script>
@@ -118,6 +125,23 @@ export default {
 
 <style scoped>
 
+.positioning{
+  padding-top: 20pt;
+  padding-bottom: 20pt;
+  text-align: center;
+}
+
+.input{
+ padding: 8pt;
+ text-align: center;
+ height:50px;
+ width: 350px;
+ border:solid grey 2px;
+ border-radius: 200px;
+
+}
+
+/*
 #file{
   visibility: hidden;
   width: 1px;
@@ -255,5 +279,5 @@ padding-top: 13pt;
   background-color: #393939;
   width: 250px;
   height: 40px;
-}
+} */
 </style>

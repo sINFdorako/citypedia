@@ -11,6 +11,9 @@
     <hr />
 
     <li><span><h3>Area: {{area}}</h3></span> <br /></li>
+
+    <li><span><h3>link: {{link}}</h3></span> <br /></li>
+
   </ul>
 
 </table>
@@ -42,7 +45,6 @@
 
   </div>
 
-</div>
 
 <h2 class="positioning" style="width: 800px; text-align:center; margin: auto;">If you have found <i class="fa fa-search" aria-hidden="true"></i> an issue please make sure to go back and correct it, otherwise click the finish button and we will check <i class="fa fa-check" aria-hidden="true"/> your new cityprofile before publishing.</h2>
 
@@ -53,6 +55,7 @@
 
 </div>
 
+</div>
 
 
 
@@ -76,7 +79,8 @@ export default {
       isOptional: localStorage.isOptional,
       hasLakes: localStorage.hasLakes,
       hasTrainstation: localStorage.hasTrainstation,
-      input: this.$route.params.input
+      input: this.$route.params.input,
+      link: localStorage.link
     }
   },
 
@@ -91,7 +95,7 @@ export default {
   checkinputs: function(event){
     if(event){
       $.post("http://localhost:3000/api/cities", {cityname: localStorage.getItem("cityname"), population: localStorage.getItem("population"), area: localStorage.getItem("area"),
-              avgtemp: localStorage.getItem("avgtemp"), nou: localStorage.getItem("nou"), urate: localStorage.getItem("urate"), isCapital: localStorage.getItem("isCapital"), hasLakes: localStorage.getItem("hasLakes"), hasTrainstation: localStorage.getItem("hasTrainstation")})
+              avgtemp: localStorage.getItem("avgtemp"), nou: localStorage.getItem("nou"), urate: localStorage.getItem("urate"), isCapital: localStorage.getItem("isCapital"), hasLakes: localStorage.getItem("hasLakes"), hasTrainstation: localStorage.getItem("hasTrainstation"), link: localStorage.getItem("link")})
   //  localStorage.clear();
     }
   }
