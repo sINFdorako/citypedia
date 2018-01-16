@@ -6,7 +6,7 @@
 <!--    <b-navbar-brand  id="navbrand" v-on:click="scrollTop" href="#"> </b-navbar-brand> -->
 
       <b-navbar-nav class="mr-auto">
-        <b-nav-item class="hvr-underline-from-center" href="#"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+        <b-nav-item class="hvr-underline-from-center" :to="{ path: '/cityprofile' }"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
 A-Z</b-nav-item>
         <b-nav-item class="hvr-underline-from-center" :to="{ path: '/ranking' }"><i class="fa fa-trophy" aria-hidden="true"></i>
 Ranking</b-nav-item>
