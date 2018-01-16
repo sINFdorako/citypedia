@@ -10,8 +10,11 @@
 A-Z</b-nav-item>
         <b-nav-item class="hvr-underline-from-center" :to="{ path: '/ranking' }"><i class="fa fa-trophy" aria-hidden="true"></i>
 Ranking</b-nav-item>
+<b-nav-item class="hvr-underline-from-center" :to="{ path: '/Login/login' }"><i class="fa fa-trophy" aria-hidden="true"></i>
+Login</b-nav-item>
         <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
 Add City</b-nav-item>
+
 
       </b-navbar-nav>
       <!-- doubled in class because centering otherwise seems impossible -->
