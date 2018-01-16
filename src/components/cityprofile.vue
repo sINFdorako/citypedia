@@ -2,20 +2,14 @@
 <div>
   <div class="positioning">
 
-        <b-card v-model="cityname, link"
-              title="New York"
-              img-src="https://www.urlaubsguru.de/wp-content/uploads/2016/03/time-square-new-york-city-istock-487537456-2.jpg"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="max-width: 20rem;"
-              class="mb-2">
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-        </p>
-        <b-button href="#" variant="primary">View</b-button>
-        </b-card>
-
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg" alt="Card image cap">
+      <div class="card-block">
+        <h4 id="heading1" class="card-title">New York</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
   </div>
 </div>
 </template>
@@ -24,7 +18,29 @@
 
 export default {
   name: 'cityprofile',
+  created: function(){
+    this.$http.get('http://localhost:3000/api/cities')
+    .then(function(resp) {
 
+      this.cities = resp.body;
+      console.log(resp.body);
+    })
+    .catch(function(err) {
+
+      this.countries = "Something went wrong: " +err
+    })
+
+    $(document).ready(function() {
+
+    $(".card-title").text('hallos');
+  })
+},
+  data:
+  function(){
+    return {
+       cities: []
+    };
+  },
 }
 
 </script>
