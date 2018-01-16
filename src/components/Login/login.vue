@@ -1,36 +1,44 @@
-<template>
 
-      <title>Google SignIn</title>
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <meta name="google-signin-client_id" content=" 340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com ">
-      <script src="https://apis.google.com/js/platform.js" async defer>
-      </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-      </script>
-      <script src="script.js"></script>
+<template>
+  <div class="login">
+    <g-signin-button
+      :params="{client_id: '340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com'}"
+      @success="onSignInSuccess"
+      @error="onSignInError">
+      Sign in with Google
+    </g-signin-button>
+  </div>
 </template>
 
-<script>
-  <div class="g-signin2" data-onsuccess="onSignIn"</div>
-    <div class="data">
-        <img id="pic" class="img-circle" width="100" height="100"/>
-        <p id="email" class="alert alert-danger">
-        <button onclick="signOut()" class="btn btn-danger">SignOut</button>
 
-    </div>
+
+<script>
+export default {
+
+  methods: {
+    onSignInSuccess (googleUser) {
+      // `googleUser` is the GoogleUser object that represents the just-signed-in user.
+      // See https://developers.google.com/identity/sign-in/web/reference#users
+      const profile = googleUser.getBasicProfile() // etc etc
+      console.log("YAY")
+      console.log(googleUser)
+    },
+    onSignInError (error) {
+      // `error` contains any error occurred.
+      console.log('OH NOES', error)
+    }
+  }
+}
 </script>
 
-
 <style>
-
-  .g-signin2{
-    margin-left:500px;
-    margin-top:200px;
-  }
-
-  .data{
-    display:none;
-  }
-
+.g-signin-button {
+  /* This is where you control how the button looks. Be creative! */
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background-color: #3c82f7;
+  color: #fff;
+  box-shadow: 0 3px 0 #0f69ff;
+}
 </style>

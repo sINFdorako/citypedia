@@ -6,7 +6,9 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import Meta from 'vue-meta'
 import VueClip from 'vue-clip'
+import GSignInButton from 'vue-google-signin-button'
 
+Vue.use(GSignInButton)
 Vue.use(VueClip)
 Vue.use(Meta)
 Vue.use(BootstrapVue);
