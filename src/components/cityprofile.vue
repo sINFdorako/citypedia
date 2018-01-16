@@ -3,7 +3,7 @@
   <div class="positioning">
 
     <div class="card" v-for="city in cities" style="width: 20rem;">
-      <img class="card-img-top" src="https://media-cdn.tripadvisor.com/media/photo-s/0e/9a/e3/1d/freedom-tower.jpg" alt="Card image cap">
+      <img class="card-img-top" :src="city.link" alt="Card image cap"/>
       <div class="card-block">
         <h4 id="heading1" class="card-title">{{city.cityname}}</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
