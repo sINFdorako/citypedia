@@ -7,7 +7,7 @@
       <div class="card-block">
         <h4 id="heading1" class="card-title">New York</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <b-button :to="{ path: '/view' }" class="btn btn-primary">Go somewhere</b-button>
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@ export default {
     padding-bottom: 20pt;
     text-align: center;
     display: block;
-    margin-left: 475pt;
+    margin-left: 550pt;
 }
 
 </style>

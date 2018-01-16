@@ -9,6 +9,7 @@ import checkinputs from '@/components/addcity/checkinputs'
 import ranking from '@/components/ranking/ranking'
 import Home from '@/components/Home'
 import cityprofile from '@/components/cityprofile'
+import view from '@/components/view'
 
 
 
@@ -68,6 +69,11 @@ export default new Router({
       path: '/cityprofile',
       name: 'cityprofile',
       component: cityprofile
+    },
+    {
+      path: '/view',
+      name: 'view',
+      component: view
     },
   ]
 })

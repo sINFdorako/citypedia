@@ -21,11 +21,12 @@ import checkinputs from '@/components/addcity/checkinputs'
 import ownfooter from '@/components/ownfooter'
 import home from '@/components/Home'
 import cityprofile from '@/components/cityprofile'
+import view from '@/components/view'
 
 
 export default {
   name: 'app',
-  components: {pagenavbar, banner, addcity, citydetails, cityphots, ranking, ownfooter, checkinputs, home, cityprofile}
+  components: {pagenavbar, banner, addcity, citydetails, cityphots, ranking, ownfooter, checkinputs, home, cityprofile, view}
 }
 </script>
 
