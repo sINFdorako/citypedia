@@ -2,11 +2,13 @@
 <template>
 
   <div>
-    <h1 style="text-align: center; margin-top: 50pt;">{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag"/></h1>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <h1 style="text-align: center; margin-top: 50pt; font-family: 'Lobster', cursive;">{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag"/></h1>
 
     <hr />
 
-    <img :src="city[0].link" alt="image" />
+    <img :src="city[0].link" alt="image" style=" width: 1000px; height 750px; box-shadow: 8px 8px 10px #aaa; margin-left: 300px; margin-right: 200px;"/>
 
     <h3>Population: {{city[0].population}}</h3>
   </div>
