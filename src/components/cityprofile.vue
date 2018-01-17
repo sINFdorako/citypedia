@@ -74,20 +74,21 @@ export default {
       this.city = resp.body;
       this.countryname =  this.city[0].country;
       console.log(this.countryname);
+      this.$http.get('https://restcountries.eu/rest/v2/name/'+this.countryname+'?fullText=true')
+      .then(function(resp) {
+        console.log(resp.body);
+        console.log("req2");
+        this.countrydata = resp.body;
+      })
+      .catch(function(err) {
+        this.countrydata = "Something went wrong" +err
+      })
+
     })
     .catch(function(err) {
       this.cities = "Something went wrong: " +err
     })
 
-    this.$http.get('https://restcountries.eu/rest/v2/name/Netherlands?fullText=true')
-    .then(function(resp) {
-      console.log(resp.body);
-      console.log("req2");
-      this.countrydata = resp.body;
-    })
-    .catch(function(err) {
-      this.countrydata = "Something went wrong" +err
-    })
 
 },
   data:

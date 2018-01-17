@@ -3,7 +3,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 <div class="positioning media">
     <div class="card" id="icon" v-for="city in cities" style="width: 20rem;">
-      <img class="card-img-top" :src="city.link" alt="Card image cap"/>
+      <img class="card-img-top" style="height: 200px;" :src="city.link" alt="Card image cap"/>
       <div class="card-block">
         <b-button :to="{ path: '/cityprofile/'+city.cityname }" class="btn btn-primary" style="margin-top:10pt; margin-bottom: 10pt;">
           <h4 style="font-family: 'Lobster', cursive;" id="heading1" class="card-title">{{city.cityname}}</h4>
