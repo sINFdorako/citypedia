@@ -7,11 +7,60 @@
     <h1 style="text-align: center; margin-top: 50pt; font-family: 'Lobster', cursive;">{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag"/></h1>
 
     <hr />
+    <div class="firstdiv" style="text-align: center;">
+      <img :src="city[0].link" alt="image" style=" width: 650px; height 450px; box-shadow: 8px 8px 10px #aaa;"/>
+    </div>
 
-    <img :src="city[0].link" alt="image" style=" width: 1000px; height 750px; box-shadow: 8px 8px 10px #aaa; margin-left: 300px; margin-right: 200px;"/>
+    <div class="seconddiv">
 
-    <h3>Population: {{city[0].population}}</h3>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <div style="margin-top:20pt;">
+    <h2 style="font-family: 'Oswald', sans-serif; margin: auto; width: 800px; text-align: center; background-color:#393939; color: white; padding: 20px; border-radius: 8px;">more information about {{city[0].cityname}}</h2>
+    <div class="positioning, second" >
+    <table>
+      <ul>
+          <li><span><h3>Country: {{city[0].country}}</h3></span> <br /></li>
+          <hr />
+
+        <li><span><h3>Population: {{city[0].population}}</h3></span> <br /></li>
+        <hr />
+
+        <li><span><h3>Area: {{city[0].area}}</h3></span> <br /></li>
+        <hr />
+
+      </ul>
+
+    </table>
+
+    </div>
+
+
+    <h2 v-if="isOptional == 'true'" style="font-family: 'Oswald', sans-serif; width: 800px; text-align: center; margin: auto; background-color:#393939; color: white; padding: 20px; border-radius: 8px;">optional inputs</h2>
+    <div class="second" v-if="isOptional == 'true'">
+      <table>
+        <ul>
+          <li><span> <h3>Average Temperature: {{city[0].avgtemp}}</h3> </span> <br /></li>
+          <hr />
+          <li><span> <h3>Number of Universities: {{city[0].nou}}</h3></span> <br /></li>
+          <hr />
+
+          <li><span><h3>Unemployment rate: {{city[0].urate}}</h3></span> <br /></li>
+          <hr />
+
+          <li><span><h3>Is capital?: {{city[0].isCaptial}}</h3></span> <br /></li>
+          <hr />
+
+          <li><span><h3>hasLakes: {{city[0].hasLakes}}</h3></span> <br /></li>
+          <hr />
+
+          <li><span><h3>has Trainstation: {{city[0].hasTrainstation}}</h3></span> <br /></li>
+        </ul>
+      </table>
+      </div>
   </div>
+</div>
+
+</div>
 
 </template>
 
@@ -55,5 +104,33 @@ export default {
 </script>
 
 <style scoped>
+
+.positioning{
+  padding-top: 30pt;
+  padding-bottom: 20pt;
+  text-align: center;
+}
+
+.second{
+  font-family: 'Oswald', sans-serif;
+  padding-top: 30pt;
+  width: 800px;
+  padding: 10px;
+  background-color: none;
+  border-radius: 8px;
+  margin: auto;
+  margin-top: 0;
+  background-color: #f7f6f5;
+}
+
+.firstdiv{
+  float: left;
+  margin-left: 5%;
+}
+
+.seconddiv{
+  float: right;
+  margin-right: 5%;
+}
 
 </style>
