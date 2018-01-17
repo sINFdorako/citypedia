@@ -2,7 +2,7 @@
 <template>
 
   <div>
-    <h1 style="text-align: center; margin-top: 50pt;">{{cityname}}</h1>
+    <h1 style="text-align: center; margin-top: 50pt;">{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag"/></h1>
 
     <hr />
 
@@ -21,9 +21,21 @@ export default {
     this.$http.get('http://localhost:3000/api/city/'+this.$route.params.cityname)
     .then(function(resp) {
       this.city = resp.body;
+      this.countryname =  this.city[0].country;
+      console.log(this.countryname);
     })
     .catch(function(err) {
       this.cities = "Something went wrong: " +err
+    })
+
+    this.$http.get('https://restcountries.eu/rest/v2/name/Netherlands?fullText=true')
+    .then(function(resp) {
+      console.log(resp.body);
+      console.log("req2");
+      this.countrydata = resp.body;
+    })
+    .catch(function(err) {
+      this.countrydata = "Something went wrong" +err
     })
 
 },
@@ -31,7 +43,9 @@ export default {
   function(){
     return {
       cityname: this.$route.params.cityname,
-      city: []
+      city: [{}],
+      countrydata: [{}],
+      countryname: ""
     };
   },
 }
