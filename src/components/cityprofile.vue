@@ -1,17 +1,16 @@
-<template>
-<div>
-  <div class="positioning">
 
-    <div class="card" v-for="city in cities" style="width: 20rem;">
-      <img class="card-img-top" :src="city.link" alt="Card image cap"/>
-      <div class="card-block">
-        <h4 id="heading1" class="card-title">{{city.cityname}}</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <b-button :to="{ path: '/view' }" class="btn btn-primary">Go somewhere</b-button>
-      </div>
-    </div>
+<template>
+
+  <div>
+    <h1 style="text-align: center; margin-top: 50pt;"></h1>
+
+    <hr />
+
+    <img  alt="image" />
+
+    <h3>Population: </h3>
   </div>
-</div>
+
 </template>
 
 <script>
@@ -19,9 +18,9 @@
 export default {
   name: 'cityprofile',
   created: function(){
-    this.$http.get('http://localhost:3000/api/cities')
+    this.$http.get('http://localhost:3000/api/city')
     .then(function(resp) {
-      this.cities = resp.body;
+      this.city = resp.body;
     })
     .catch(function(err) {
       this.cities = "Something went wrong: " +err
@@ -39,13 +38,5 @@ export default {
 </script>
 
 <style scoped>
-
-.positioning{
-    padding-top: 20pt;
-    padding-bottom: 20pt;
-    text-align: center;
-    display: block;
-    margin-left: 550pt;
-}
 
 </style>

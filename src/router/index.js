@@ -7,9 +7,8 @@ import citydetails from '@/components/addcity/citydetails'
 import cityphots from '@/components/addcity/cityphots'
 import checkinputs from '@/components/addcity/checkinputs'
 import ranking from '@/components/ranking/ranking'
-import Home from '@/components/Home'
+import citycard from '@/components/citycard'
 import cityprofile from '@/components/cityprofile'
-import view from '@/components/view'
 
 
 
@@ -23,7 +22,7 @@ Vue.use(citydetails)
 Vue.use(checkinputs)
 Vue.use(ranking)
 Vue.use(cityphots)
-Vue.use(Home)
+Vue.use(citycard)
 Vue.use(cityprofile)
 
 export default new Router({
@@ -61,19 +60,14 @@ export default new Router({
       component: checkinputs
     },
     {
-      path: '/Home',
-      name: 'Home',
-      component: Home
+      path: '/citycard',
+      name: 'citycard',
+      component: citycard
     },
     {
       path: '/cityprofile',
       name: 'cityprofile',
       component: cityprofile
-    },
-    {
-      path: '/view',
-      name: 'view',
-      component: view
     },
   ]
 })
