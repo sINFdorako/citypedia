@@ -7,7 +7,7 @@
     <h1 style="text-align: center; margin-top: 50pt; font-family: 'Lobster', cursive;">{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag"/></h1>
 
     <hr />
-    <div class="firstdiv" style="text-align: center;">
+    <div class="firstdiv" >
       <img :src="city[0].link" alt="image" style=" width: 650px; height 450px; box-shadow: 8px 8px 10px #aaa;"/>
     </div>
 
@@ -126,12 +126,12 @@ export default {
 
 .firstdiv{
   float: left;
-  margin-left: 5%;
+  margin-left: 2%;
 }
 
 .seconddiv{
   float: right;
-  margin-right: 5%;
+  margin-right: 2%;
 }
 
 </style>
