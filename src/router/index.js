@@ -8,7 +8,7 @@ import cityphots from '@/components/addcity/cityphots'
 import checkinputs from '@/components/addcity/checkinputs'
 import ranking from '@/components/ranking/ranking'
 import Home from '@/components/Home'
-import login from '@/components/Login/login'
+
 
 
 
@@ -46,12 +46,6 @@ export default new Router({
       path: '/ranking',
       name: 'ranking',
       component: ranking
-    },
-    {
-
-      path: '/login',
-      name: 'login',
-      component: login
     },
     {
       path: '/citydetails/cityphots/:input',
