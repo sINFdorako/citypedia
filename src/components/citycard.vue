@@ -7,7 +7,7 @@
       <div class="card-block">
         <h4 id="heading1" class="card-title">{{city.cityname}}</h4>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <b-button :to="{ path: '/cityprofile' }" class="btn btn-primary">Go somewhere</b-button>
+        <b-button :to="{ path: '/cityprofile/'+city.cityname }" class="btn btn-primary">Go somewhere</b-button>
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@ export default {
   data:
   function(){
     return {
-       cities: []
+      cities: []
     };
   },
 }

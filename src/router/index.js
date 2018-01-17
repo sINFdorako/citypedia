@@ -65,7 +65,7 @@ export default new Router({
       component: citycard
     },
     {
-      path: '/cityprofile',
+      path: '/cityprofile/:cityname',
       name: 'cityprofile',
       component: cityprofile
     },
