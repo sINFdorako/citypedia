@@ -15,7 +15,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <div style="margin-top:20pt;">
-    <h2 style="font-family: 'Oswald', sans-serif; margin: auto; width: 800px; text-align: center; background-color:#393939; color: white; padding: 20px; border-radius: 8px;">more information about {{city[0].cityname}}</h2>
     <div class="positioning, second" >
     <table>
       <ul>
@@ -114,19 +113,19 @@ export default {
 
 .second{
   font-family: 'Oswald', sans-serif;
-  padding-top: 30pt;
   width: 800px;
-  padding: 10px;
+  height: 450px;
+  padding-top: 10px;
   background-color: none;
   border-radius: 8px;
-  margin: auto;
-  margin-top: 0;
   background-color: #f7f6f5;
 }
 
 .firstdiv{
+  margin-top: 25pt;
   float: left;
   margin-left: 2%;
+
 }
 
 .seconddiv{
