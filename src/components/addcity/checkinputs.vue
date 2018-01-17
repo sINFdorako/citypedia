@@ -8,13 +8,15 @@
 <table>
   <ul>
       <li><span><h3>Country: {{country}}</h3></span> <br /></li>
+      <hr />
 
     <li><span><h3>Population: {{population}}</h3></span> <br /></li>
     <hr />
 
     <li><span><h3>Area: {{area}}</h3></span> <br /></li>
+    <hr />
 
-    <li><span><h3>link: {{link}}</h3></span> <br /></li>
+    <li><span><img :src="link" alt="image" style="width: 350px; height: 250px; margin-right: 60px; box-shadow: 8px 8px 10px #aaa;"></img></span> <br /></li>
 
   </ul>
 

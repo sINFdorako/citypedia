@@ -1,11 +1,16 @@
 <template>
   <div>
 
-    <h1 style="text-align: center; margin-top: 30pt;">Add some pictures of {{input}}</h1>
+    <h1 style="text-align: center; margin-top: 30pt;">Add a picture of {{input}}</h1>
 
     <div class="positioning">
       <h3>Paste your link here</h3>
       <input id="linkbox" class="input" type="text" v-model="link"  placeholder="paste your link here"  value="localStorage.link">
+    </div>
+
+    <div class="positioning">
+      <h3>Preview</h3>
+      <img class="shadow" :src="link" style="width: 500px; height: 300px; margin-top: 30pt;" />
     </div>
 
     <!-- <div style="margin-top:100px;">
@@ -140,6 +145,11 @@ export default {
  border-radius: 200px;
 
 }
+
+.shadow{
+  box-shadow: 8px 8px 10px #aaa;
+}
+
 
 /*
 #file{

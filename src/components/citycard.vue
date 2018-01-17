@@ -1,13 +1,13 @@
 <template>
 <div>
-  <div class="positioning">
-
-    <div class="card" v-for="city in cities" style="width: 20rem;">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<div class="positioning media">
+    <div class="card" id="icon" v-for="city in cities" style="width: 20rem;">
       <img class="card-img-top" :src="city.link" alt="Card image cap"/>
       <div class="card-block">
-        <h4 id="heading1" class="card-title">{{city.cityname}}</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <b-button :to="{ path: '/cityprofile/'+city.cityname }" class="btn btn-primary">Go somewhere</b-button>
+        <b-button :to="{ path: '/cityprofile/'+city.cityname }" class="btn btn-primary" style="margin-top:10pt; margin-bottom: 10pt;">
+          <h4 style="font-family: 'Lobster', cursive;" id="heading1" class="card-title">{{city.cityname}}</h4>
+        </b-button>
       </div>
     </div>
   </div>
@@ -41,11 +41,35 @@ export default {
 <style scoped>
 
 .positioning{
+    padding-left: 20px;
     padding-top: 20pt;
     padding-bottom: 20pt;
     text-align: center;
     display: block;
     margin-left: 550pt;
 }
+
+.card{
+  background-color: lightgrey !important;
+  margin-top: 30pt;
+  margin-right: 10pt;
+}
+
+.media {
+  float: left;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+#icon{
+    display:inline-block;
+    width: 64px;
+    height: 64px;
+}
+
+
 
 </style>
