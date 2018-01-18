@@ -6,10 +6,10 @@
 <!--    <b-navbar-brand  id="navbrand" v-on:click="scrollTop" href="#"> </b-navbar-brand> -->
 
       <b-navbar-nav class="mr-auto">
-        <b-nav-item class="hvr-underline-from-center" :to="{ path: '/citycard' }"><i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
-A-Z</b-nav-item>
-        <b-nav-item class="hvr-underline-from-center" :to="{ path: '/ranking' }"><i class="fa fa-trophy" aria-hidden="true"></i>
-Ranking</b-nav-item>
+        <b-nav-item class="hvr-underline-from-center" :to="{ path: '/citycard' }"><i class="fa fa-university" aria-hidden="true"></i>
+Cities</b-nav-item>
+        <!--<b-nav-item class="hvr-underline-from-center" :to="{ path: '/ranking' }"><i class="fa fa-trophy" aria-hidden="true"></i>
+Ranking</b-nav-item>-->
         <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
 Add City</b-nav-item>
 
@@ -103,7 +103,7 @@ client.verifyIdToken(
     },
     logout() {
       window.sessionStorage.citypediaUser = "";
-      document.location.href = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:8002';
+      document.location.href = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:8000';
     }
 
   },

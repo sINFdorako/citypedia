@@ -124,13 +124,13 @@ export default {
 .firstdiv{
   margin-top: 25pt;
   float: left;
-  margin-left: 5%;
+  margin-left: 2%;
 
 }
 
 .seconddiv{
   float: right;
-  margin-right: 5%;
+  margin-right: 2%;
 }
 
 </style>

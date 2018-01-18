@@ -5,14 +5,15 @@
 
 
   <div class="positioning">
-    <select id="dropdownlist" class="input" v-on:change="">
+    <select id="dropdownlist" v-on:change="changeFunction($event)" class="input">
       <option selected disabled value="">Choose sorting</option>
-      <option id="options">PLACEHOLDER</option>
+      <option id="options" ></option>
       <option id="options">PLACEHOLDER</option>
       <option id="options">PLACEHOLDER</option>
       <option id="options">PLACEHOLDER</option>
       <option id="options">PLACEHOLDER</option>
     </select>
+    <router-link :to="{ path: '/citycard' }">unsorted</router-link>
 
   </div>
 
@@ -22,6 +23,12 @@
 <script>
 export default {
   name: 'ranking',
+  methods: {
+    changeFunction: function(arg) {
+      console.log(arg);
+      //this.$router.push("/citycard");
+    }
+  }
 }
 </script>
 
