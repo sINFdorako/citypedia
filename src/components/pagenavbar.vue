@@ -17,11 +17,11 @@ Add City</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav>
         <g-signin-button  class="g-signin-button hvr-underline-from-center" v-if="! loggedIn()"
-          :params="{client_id: '340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com'}"
-          @success="onSignInSuccess"
-          @error="onSignInError">
-          <i class="fa fa-sign-in" aria-hidden="true"></i>
-          Login
+            :params="{client_id: '340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com'}"
+            @success="onSignInSuccess"
+            @error="onSignInError">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            Login
         </g-signin-button>
         <b-nav-item  class="hvr-underline-from-center" v-if="loggedIn()" v-on:click="logout()">
           <i class="fa fa-sign-out" aria-hidden="true"></i>
@@ -72,36 +72,33 @@ export default {
 
     },
     loggedIn() {
-  /*    var GoogleAuth = require('google-auth-library');
-var auth = new GoogleAuth;
-var client = new auth.OAuth2('340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com');
-client.verifyIdToken(
-    token,
-    '340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com',
-    // Or, if multiple clients access the backend:
-    //[CLIENT_ID_1],
-    function(e, login) {
-      var payload = login.getPayload();
-      var userid = payload['sub'];
-      // If request specified a G Suite domain:
-      //var domain = payload['hd'];
-    });*/
+      this.$http.post("http://localhost:3000/api/userauth", {}, {headers: {Authorization: window.sessionStorage.citypediatoken}})
+      .then(response => {
+        console.log(response.body);
+        if(response.body = null) console.log("no cancer");
+        if (response.body.loggedin == true){
+          console.log("Logged in");
+          return true;
+        } else {
+          console.log("not Logged in");
+          return false;
+        }
+      });
       return (this.user != "");
     },
     onSignInSuccess (googleUser) {
-      // `googleUser` is the GoogleUser object that represents the just-signed-in user.
-      // See https://developers.google.com/identity/sign-in/web/reference#users
-      this.user = googleUser.getBasicProfile().ig; // etc etc
+
+      this.user = googleUser.getBasicProfile().ig;
       window.sessionStorage.citypediaUser = googleUser.getBasicProfile().ig;
-      console.log("YAY")
-      console.log(googleUser.getBasicProfile())
+      window.sessionStorage.citypediatoken = googleUser.getAuthResponse().id_token;
     },
     onSignInError (error) {
-      // `error` contains any error occurred.
+
       console.log('OH NOES', error)
     },
     logout() {
       window.sessionStorage.citypediaUser = "";
+      window.sessionStorage.citypediatoken = "";
       document.location.href = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:8000';
     }
 
@@ -113,7 +110,6 @@ client.verifyIdToken(
   },
   created: function(){
 
-    this.user = window.sessionStorage.citypediaUser;
     if (this.user == null) {
       this.user = "";
     }
