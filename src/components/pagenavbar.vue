@@ -15,6 +15,7 @@ Add City</b-nav-item>
 
 
 
+
       </b-navbar-nav>
       <b-navbar-nav>
         <g-signin-button  class="g-signin-button hvr-underline-from-center" v-if="! loggedIn()"
@@ -75,12 +76,12 @@ export default {
     loggedIn() {
   /*    var GoogleAuth = require('google-auth-library');
 var auth = new GoogleAuth;
-var client = new auth.OAuth2('340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com', '', '');
+var client = new auth.OAuth2('340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com');
 client.verifyIdToken(
     token,
     '340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com',
     // Or, if multiple clients access the backend:
-    //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3],
+    //[CLIENT_ID_1],
     function(e, login) {
       var payload = login.getPayload();
       var userid = payload['sub'];
