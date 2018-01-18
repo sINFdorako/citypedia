@@ -10,8 +10,9 @@
 A-Z</b-nav-item>
         <b-nav-item class="hvr-underline-from-center" :to="{ path: '/ranking' }"><i class="fa fa-trophy" aria-hidden="true"></i>
 Ranking</b-nav-item>
-        <b-nav-item class="hvr-underline-from-center" id="addcity" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
+        <b-nav-item class="hvr-underline-from-center" id="addcity" v-if="loggedIn()" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
 Add City</b-nav-item>
+
 
 
 
@@ -75,12 +76,12 @@ export default {
     loggedIn() {
   /*    var GoogleAuth = require('google-auth-library');
 var auth = new GoogleAuth;
-var client = new auth.OAuth2('340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com', '', '');
+var client = new auth.OAuth2('340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com');
 client.verifyIdToken(
     token,
     '340370812528-fqkdef2ah126p3i1opeuqslgtv9vnu61.apps.googleusercontent.com',
     // Or, if multiple clients access the backend:
-    //[CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3],
+    //[CLIENT_ID_1],
     function(e, login) {
       var payload = login.getPayload();
       var userid = payload['sub'];
@@ -103,7 +104,7 @@ client.verifyIdToken(
     },
     logout() {
       window.sessionStorage.citypediaUser = "";
-      document.location.href = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:8002';
+      document.location.href = 'https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=http://localhost:8000';
     }
 
   },
