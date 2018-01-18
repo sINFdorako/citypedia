@@ -6,7 +6,6 @@ import addcity from '@/components/addcity/addcity'
 import citydetails from '@/components/addcity/citydetails'
 import cityphots from '@/components/addcity/cityphots'
 import checkinputs from '@/components/addcity/checkinputs'
-import ranking from '@/components/ranking/ranking'
 import citycard from '@/components/citycard'
 import cityprofile from '@/components/cityprofile'
 
@@ -15,15 +14,7 @@ import cityprofile from '@/components/cityprofile'
 
 Vue.use(router)
 Vue.use(Router)
-
 Vue.use(VueResource)
-Vue.use(addcity)
-Vue.use(citydetails)
-Vue.use(checkinputs)
-Vue.use(ranking)
-Vue.use(cityphots)
-Vue.use(citycard)
-Vue.use(cityprofile)
 
 export default new Router({
   routes: [
@@ -42,12 +33,6 @@ export default new Router({
       name: 'citydetails',
       component: citydetails
 
-    },
-    {
-
-      path: '/ranking',
-      name: 'ranking',
-      component: ranking
     },
     {
       path: '/citydetails/cityphots/:input',

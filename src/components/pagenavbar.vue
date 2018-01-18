@@ -6,13 +6,9 @@
 <!--    <b-navbar-brand  id="navbrand" v-on:click="scrollTop" href="#"> </b-navbar-brand> -->
 
       <b-navbar-nav class="mr-auto">
-
         <b-nav-item class="hvr-underline-from-center" :to="{ path: '/citycard' }"><i class="fa fa-university" aria-hidden="true"></i>
 Cities</b-nav-item>
-        <!--<b-nav-item class="hvr-underline-from-center" :to="{ path: '/ranking' }"><i class="fa fa-trophy" aria-hidden="true"></i>
-Ranking</b-nav-item>-->
         <b-nav-item class="hvr-underline-from-center" id="addcity" v-if="loggedIn()" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
-
 Add City</b-nav-item>
 
 
@@ -173,14 +169,6 @@ input {
   border-radius: 10px;
 }
 
-.animationIn {
-  opacity: 0;
-  animation-name: bounceIn;
-  animation-duration: 450ms;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
 
 #navbrand {
   width: 80px;
@@ -207,24 +195,6 @@ input {
     background-color: #393939 !important;
 }
 
-@keyframes bounceIn{
-  0%{
-    opacity: 0;
-    transform: scale(0.3) translate3d(0,0,0);
-  }
-  50%{
-    opacity: 0.9;
-    transform: scale(1.1);
-  }
-  80%{
-    opacity: 1;
-    transform: scale(0.89);
-  }
-  100%{
-    opacity: 1;
-    transform: scale(1) translate3d(0,0,0);
-  }
-}
 
 .hvr-underline-from-center {
   display: inline-block;
