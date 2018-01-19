@@ -72,12 +72,10 @@ export default {
 
     },
     loggedIn() {
-      if(window.sessionStorage.citypediatoken != null || window.sessionStorage.citypediatoken != ""){
+      if(window.sessionStorage.citypediatoken != null && window.sessionStorage.citypediatoken != ""){
           this.user = window.sessionStorage.citypediaUser;
           return (this.user != "");
-      } else if (window.sessionStoage.citypediatoken == null || window.sessionStorage.citypediaUser == null){
-        return false;
-      }
+      } 
       this.$http.post("http://localhost:3000/api/userauth", {}, {headers: {Authorization: window.sessionStorage.citypediatoken}})
       .then(response => {
         if(response.body = null) return false;
