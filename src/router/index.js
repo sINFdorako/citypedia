@@ -23,7 +23,7 @@ function authPromise() {
     let xhr = new XMLHttpRequest();
 
     xhr.open("POST", 'http://localhost:3000/api/userauth',true);
-    xhr.setRequestHeader("Authorization","Bearer "+ window.sessionStorage.citypediatoken);
+    xhr.setRequestHeader("Authorization", window.sessionStorage.citypediatoken);
 
     xhr.onreadystatechange  = () => {
       if(xhr.readyState == XMLHttpRequest.DONE) {
