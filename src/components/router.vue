@@ -4,19 +4,13 @@
     <h1 class="left">Welcome</h1>
     <p class="left">
       Hi! Welcome to <strong>Citypedia</strong>.<br />
-      I wish I could add text that makes sense and fills the page so that you can scroll down to see how the navbar behaves. But I can't!
+
     </p>
     <p class="right">
-      So I will just take the dummy text even if its boring af. <br />
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      This is a Website about Cities!<br />
+      You can checkout different stats about cities.<br />
+      If you wanna <u>add</u> a city, you have to Login with your <strong>Google Account</strong>!
     </p>
-    <p class="left">
-      damn, the dummy text takes to much space at the html. Im gonna use a picture instead!
-    </p>
-    <img src="../assets/filler.png" />
 
    </nav>
  </div>
@@ -61,18 +55,23 @@ export default {
 
 .left {
   text-align: left;
-  margin-right: 60%;
+  margin-left: 5%;
+  font-size: xx-large;
+  padding-top: 3%
 }
 .right {
-  text-align: right;
-  margin-left: 40%;
+  text-align: start;
+  margin-left: 50%;
+  font-size: xx-large;
+
 }
 
 #container {
-  margin-top: 17px;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
   font-size: 13pt;
   font-family: 'Montserrat', sans-serif;
+  background-image: url(https://media.wired.com/photos/59e644e21a7a784c71f7d86d/2:1/w_2500,c_limit/TorontoSkyline-HP-553395387.jpg);
 }
 </style>
