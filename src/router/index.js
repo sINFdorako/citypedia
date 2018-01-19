@@ -9,12 +9,52 @@ import checkinputs from '@/components/addcity/checkinputs'
 import citycard from '@/components/citycard'
 import cityprofile from '@/components/cityprofile'
 
-
-
-
 Vue.use(router)
 Vue.use(Router)
 Vue.use(VueResource)
+
+
+async function auth() {
+  return await authPromise();
+}
+
+function authPromise() {
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", 'http://localhost:3000/api/userauth',true);
+    xhr.setRequestHeader("Authorization","Bearer "+ window.sessionStorage.citypediatoken);
+
+    xhr.onreadystatechange  = () => {
+      if(xhr.readyState == XMLHttpRequest.DONE) {
+        console.log(xhr.response)
+        if(JSON.parse(xhr.response).loggedin) {
+          resolve();
+        } else {
+          reject();
+        }
+      }
+    }
+
+    xhr.onerror = () => {
+      reject();
+    }
+
+    xhr.send();
+  });
+}
+
+
+
+function checkIfLoggedIn(to, from, next) {
+  auth().then(result => {
+    next();
+  }, () => {
+    next('/');
+  });
+
+}
+
 
 export default new Router({
   routes: [
@@ -26,7 +66,8 @@ export default new Router({
     {
       path: '/addcity',
       name: 'addcity',
-      component: addcity
+      component: addcity,
+      beforeEnter: checkIfLoggedIn
     },
     {
       path: '/citydetails/:input',
