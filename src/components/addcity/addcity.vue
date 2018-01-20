@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="positioning">
-      <h1>Which city do you want to add?</h1>
-      <br>
-      <input id="inputField" class="input" type="text" v-model="input" placeholder="city" value="localStorage.cityname">
-      <br>
-      <div>
-        <b-button class="button" v-on:click="checkinputcity">go on <i class="fa fa-caret-right" aria-hidden="true"/></b-button>
-      </div>
+          <h1>Which city do you want to add?</h1>
+          <input id="inputField" class="input" type="text" v-model="input"
+          placeholder="city" value="localStorage.cityname">
+          <div>
+            <b-button class="button" v-on:click="checkinputcity">
+            go on <i class="fa fa-caret-right" aria-hidden="true"/></b-button>
+          </div>
     </div>
   </div>
 </template>
@@ -71,12 +71,11 @@ export default {
 </script>
 
 <style scoped>
+
 .positioning{
     margin-top: 25pt;
     text-align: center;
   }
-
-
 
  .input{
   padding: 8pt;
