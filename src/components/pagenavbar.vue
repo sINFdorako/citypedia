@@ -2,17 +2,15 @@
 
   <b-navbar id="nav_bar" toggleable="md" type="dark" variant="dark">
 
-
 <!--    <b-navbar-brand  id="navbrand" v-on:click="scrollTop" href="#"> </b-navbar-brand> -->
 
       <b-navbar-nav class="mr-auto">
-        <b-nav-item class="hvr-underline-from-center" :to="{ path: '/citycard' }"><i class="fa fa-university" aria-hidden="true"></i>
-Cities</b-nav-item>
-        <b-nav-item class="hvr-underline-from-center" id="addcity" v-if="loggedIn()" :to="{ path: '/addcity' }"><i class="fa fa-plus" aria-hidden="true"></i>
-Add City</b-nav-item>
-
-
-
+        <b-nav-item class="hvr-underline-from-center" :to="{ path: '/citycard' }">
+          <i class="fa fa-university" aria-hidden="true"></i>
+          Cities</b-nav-item>
+        <b-nav-item class="hvr-underline-from-center" id="addcity" v-if="loggedIn()" :to="{ path: '/addcity' }">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add City</b-nav-item>
 
       </b-navbar-nav>
       <b-navbar-nav>
@@ -50,6 +48,7 @@ Add City</b-nav-item>
         </b-nav-item-dropdown>
       </b-navbar-nav> -->
   </b-navbar>
+  
 </template>
 
 <script>

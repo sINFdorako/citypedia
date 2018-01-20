@@ -5,8 +5,9 @@
     <div class="card" id="icon" v-for="city in cities" style="width: 20rem;">
       <img class="card-img-top" style="height: 200px;" :src="city.link" alt="Card image cap"/>
       <div class="card-block">
-        <b-button :to="{ path: '/cityprofile/'+city.cityname }" class="btn btn-primary" style="margin-top:10pt; margin-bottom: 10pt;">
-          <h4 style="font-family: 'Lobster', cursive;" id="heading1" class="card-title">{{city.cityname}}</h4>
+          <b-button :to="{ path: '/cityprofile/'+city.cityname }"
+          class="btn btn-primary" id="b-position">
+          <h4 class="card-title">{{city.cityname}}</h4>
         </b-button>
       </div>
     </div>
@@ -40,6 +41,10 @@ export default {
 
 <style scoped>
 
+h4{
+  font-family: 'Lobster', cursive;
+}
+
 .positioning{
     padding-left: 20px;
     padding-top: 20pt;
@@ -53,6 +58,11 @@ export default {
   background-color: lightgrey !important;
   margin-top: 30pt;
   margin-right: 10pt;
+}
+
+#b-position{
+  margin-top:10pt;
+  margin-bottom: 10pt;
 }
 
 .media {
