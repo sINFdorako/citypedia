@@ -1,7 +1,7 @@
 <template>
 <div>
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-  <div class="foot">
+  <div class="foot" id="hangon">
     <div class="card text-center">
       <div class="card-header">
     Citypedia   <i id="uptotop" v-on:click="toHome" class="fa fa-chevron-up" aria-hidden="true"></i>
@@ -38,10 +38,17 @@ export default {
   font-size: 185%;
 }
 
+.foot{
+}
+
 #uptotop {
   float:right;
   height: 3px;
   width: auto;
+}
+
+#hangon{
+  margin-top: 0;
 }
 
 </style>
