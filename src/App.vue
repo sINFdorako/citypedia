@@ -37,6 +37,7 @@ export default {
 
 .router-view{
   min-height: 750px;
+  padding: 1em;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Nunito');

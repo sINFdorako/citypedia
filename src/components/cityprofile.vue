@@ -4,7 +4,8 @@
   <div>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-    <h1>{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag"/> </h1>
+    <h1>{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag" alt="flag"/> </h1>
+
 
     <hr />
     <div class="firstdiv" >

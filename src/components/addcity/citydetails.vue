@@ -2,7 +2,8 @@
 
   <div>
 
-    <h1> More details about {{input}} <img id="flag"/></h1>
+    <h1> More details about {{input}} <img id="flag" alt="flag"/></h1>
+
 
     <div class="positioning">
       <select id="dropdownlist" class="input" v-on:change="saveValue">
