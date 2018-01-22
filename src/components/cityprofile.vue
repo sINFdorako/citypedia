@@ -4,7 +4,8 @@
   <div>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-    <h1 style="text-align: center; margin-top: 50pt; font-family: 'Lobster', cursive;">{{cityname}} <img style="height: 30px;" alt="flag" :src="countrydata[0].flag"/> </h1>
+    <h1>{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag" alt="flag"/> </h1>
+
 
     <hr />
     <div class="firstdiv" >
@@ -31,8 +32,10 @@
           <td v-if="city[0].urate != 'undefined'">Unemployment rate: {{city[0].urate}}%</td>
         </tr>
          <tr>
-          <td v-if="city[0].hasLakes != 'undefined'">Has Lakes: <i class="fa fa-check" aria-hidden="true"/></td>
-          <td v-if="city[0].hasTrainstation != 'undefined'">Has Trainstation: <i class="fa fa-check" aria-hidden="true"/></td>
+          <td v-if="city[0].hasLakes != 'undefined'">Has Lakes:
+            <i class="fa fa-check" aria-hidden="true"/></td>
+          <td v-if="city[0].hasTrainstation != 'undefined'">Has Trainstation:
+            <i class="fa fa-check" aria-hidden="true"/></td>
         </tr>
       </tbody>
     </table>
@@ -86,6 +89,11 @@ export default {
 
 <style scoped>
 
+h1{
+  text-align: center;
+  margin-top: 50pt;
+  font-family: 'Lobster', cursive;
+}
 
 .positioning{
   padding-top: 30pt;

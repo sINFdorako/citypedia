@@ -1,67 +1,72 @@
 <template>
-<div>
-<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-<h1 class="positioning">Are your inputs about {{input}} correct?</h1>
-<div style="margin-top:20pt;">
-<h2 style="font-family: 'Oswald', sans-serif; margin: auto; width: 800px; text-align: center; background-color:#393939; color: white; padding: 20px; border-radius: 8px;">required inputs</h2>
-<div class="positioning, second" >
-<table>
-  <ul>
-      <li><span><h3>Country: {{country}}</h3></span> <br /></li>
-      <hr />
 
-    <li><span><h3>Population: {{population}}</h3></span> <br /></li>
-    <hr />
+  <div>
 
-    <li><span><h3>Area: {{area}}</h3></span> <br /></li>
-    <hr />
-
-    <li><span><img :src="link" alt="insertedimage" style="width: 350px; height: 250px; margin-right: 60px; box-shadow: 8px 8px 10px #aaa;"></img></span> <br /></li>
-
-  </ul>
-
-</table>
-
-</div>
+      <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+      <h1 class="positioning">Are your inputs about {{input}} correct?</h1>
+      <div style="margin-top:20pt;">
+      <h2 class="h2first">required inputs</h2>
+      
+      
+      <div class="positioning, box" >
 
 
-<h2 v-if="isOptional == 'true'" style="font-family: 'Oswald', sans-serif; width: 800px; text-align: center; margin: auto; background-color:#393939; color: white; padding: 20px; border-radius: 8px;">optional inputs</h2>
-<div class="second" v-if="isOptional == 'true'">
-  <table>
-    <ul>
-      <li><span> <h3>Average Temperature: {{avgtemp}}</h3> </span> <br /></li>
-      <hr />
-      <li><span> <h3>Number of Universities: {{nou}}</h3></span> <br /></li>
-      <hr />
+        <table>
 
-      <li><span><h3>Unemployment rate: {{urate}}</h3></span> <br /></li>
-      <hr />
+          <ul>
 
-      <li><span><h3>Is capital?: {{isCapital}}</h3></span> <br /></li>
-      <hr />
+            <li><span><h3>Country: {{country}}</h3></span> <br /></li>
+            <hr />
+            <li><span><h3>Population: {{population}}</h3></span> <br /></li>
+            <hr />
+            <li><span><h3>Area: {{area}}</h3></span> <br /></li>
+            <hr />
+            <li><span><img :src="link" class="previewimg" alt="image"></img></span> <br /></li>
 
-      <li><span><h3>hasLakes: {{hasLakes}}</h3></span> <br /></li>
-      <hr />
+          </ul>
 
-      <li><span><h3>has Trainstation: {{hasTrainstation}}</h3></span> <br /></li>
-    </ul>
-  </table>
+       </table>
 
+     </div>
+
+
+     <h2 v-if="isOptional == 'true'" class="h2first">optional inputs</h2>
+
+     <div class="positioning box" v-if="isOptional == 'true'">
+
+       <table>
+
+         <ul>
+
+          <li><span> <h3>Average Temperature: {{avgtemp}}</h3> </span> <br /></li>
+          <hr />
+          <li><span> <h3>Number of Universities: {{nou}}</h3></span> <br /></li>
+          <hr />
+          <li><span><h3>Unemployment rate: {{urate}}</h3></span> <br /></li>
+          <hr />
+          <li><span><h3>Is capital?: {{isCapital}}</h3></span> <br /></li>
+          <hr />
+          <li><span><h3>hasLakes: {{hasLakes}}</h3></span> <br /></li>
+          <hr />
+          <li><span><h3>has Trainstation: {{hasTrainstation}}</h3></span> <br /></li>
+
+         </ul>
+
+       </table>
+
+     </div>
+
+
+      <h2 class="positioning secondh2">If you have found <i class="fa fa-search" aria-hidden="true"></i>
+      an issue please make sure to go back and correct it, otherwise click the finish button and we will check
+      <i class="fa fa-check" aria-hidden="true"/> your new cityprofile before publishing.</h2>
+
+      <div class="positioning" style="margin-top: 15pt;">
+        <b-button class="button" v-on:click="back" > <i class="fa fa-caret-left" aria-hidden="true"/> go back and correct</b-button>
+        <b-button class="button" v-on:click="checkinputs">finish<i class="fa fa-check" aria-hidden="true"/></b-button>
+      </div>
+    </div>
   </div>
-
-
-<h2 class="positioning" style="width: 800px; text-align:center; margin: auto;">If you have found <i class="fa fa-search" aria-hidden="true"></i> an issue please make sure to go back and correct it, otherwise click the finish button and we will check <i class="fa fa-check" aria-hidden="true"/> your new cityprofile before publishing.</h2>
-
-<div class="positioning" style="margin-top: 15pt;">
-  <b-button class="button" v-on:click="back" > <i class="fa fa-caret-left" aria-hidden="true"/> go back and correct</b-button>
-  <b-button class="button" v-on:click="checkinputs">finish<i class="fa fa-check" aria-hidden="true"/></b-button>
-</div>
-
-</div>
-
-</div>
-
-
 
 </template>
 
@@ -118,7 +123,7 @@ export default {
   text-align: center;
 }
 
-.second{
+.box{
   font-family: 'Oswald', sans-serif;
   padding-top: 30pt;
   width: 800px;
@@ -128,6 +133,30 @@ export default {
   margin: auto;
   margin-top: 0;
   background-color: #f7f6f5;
+}
+
+.h2first{
+   font-family: 'Oswald', sans-serif;
+   margin: auto;
+   width: 800px;
+   text-align: center;
+   background-color:#393939;
+   color: white;
+   padding: 20px;
+   border-radius: 8px;
+}
+
+.previewimg{
+  width: 350px;
+  height: 250px;
+  margin-right: 60px;
+  box-shadow: 8px 8px 10px #aaa;
+}
+
+.secondh2{
+  width: 800px;
+  text-align:center;
+  margin: auto;
 }
 
 </style>

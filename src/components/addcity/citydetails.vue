@@ -1,17 +1,18 @@
 <template>
+
   <div>
 
-    <h1 style="text-align: center; margin-top: 20pt;"> More details about {{input}}   <img id="flag" alt="flag"/></h1>
+    <h1> More details about {{input}} <img id="flag" alt="flag"/></h1>
+
 
     <div class="positioning">
       <select id="dropdownlist" class="input" v-on:change="saveValue">
         <option selected disabled value="">Country</option>
         <option id="options" value="obj" v-bind:value="obj" v-for="(obj, key) in countries">{{countries[key].name}}</option>
       </select>
-
     </div>
 
-<hr />
+    <hr />
 
     <div class="positioning">
       <h3>Population</h3>
@@ -30,9 +31,9 @@
                       unchecked-value="false">
                       Capital city
     </b-form-checkbox>
-      </div>
+    </div>
 
-<hr  />
+    <hr  />
     <div id="centerCheckbox">
         <b-form-checkbox id="optinfocheckbox"
                           v-model="isOptional"
@@ -42,21 +43,21 @@
         </b-form-checkbox>
     </div>
     <div id="optional" v-if="isOptional == 'true'">
-      <hr />
+    <hr />
 
-<div id="optionalcheckboxes">
-<b-form-checkbox id="hastrainstationoncheckbox"
-v-model="hasTrainstation"
-value="true"
-unchecked-value="false">
-Has train station
-</b-form-checkbox> <b-form-checkbox id="haslakescheckbox"
-v-model="hasLakes"
-value="true"
-unchecked-value="false">
-Has lakes
-</b-form-checkbox>
-        </div>
+    <div id="optionalcheckboxes">
+    <b-form-checkbox id="hastrainstationoncheckbox"
+    v-model="hasTrainstation"
+    value="true"
+    unchecked-value="false">
+    Has train station
+    </b-form-checkbox> <b-form-checkbox id="haslakescheckbox"
+    v-model="hasLakes"
+    value="true"
+    unchecked-value="false">
+    Has lakes
+    </b-form-checkbox>
+    </div>
 
 
     <div class="positioning">
@@ -66,26 +67,26 @@ Has lakes
             min="1" max="60" value="localStorage.avgtemp">
     </div>
 
-<div class="positioning">
-<h3>Number of universities</h3>
-<input id="noutextbox" class="input" type="number"
-v-model="nou" :disabled="validated == 0" placeholder="Number of universities" value="localStorage.nou">
-</div>
+    <div class="positioning">
+    <h3>Number of universities</h3>
+    <input id="noutextbox" class="input" type="number"
+    v-model="nou" :disabled="validated == 0" placeholder="Number of universities" value="localStorage.nou">
+    </div>
 
-<div class="positioning">
-<h3>Unemployment rate</h3>
-<input id="uratetextbox" class="input" type="number" v-model="urate" :disabled="validated == 0" placeholder="Unemployment rate" value="localStorage.uerate">
-</div>
+    <div class="positioning">
+    <h3>Unemployment rate</h3>
+    <input id="uratetextbox" class="input" type="number" v-model="urate" :disabled="validated == 0" placeholder="Unemployment rate" value="localStorage.uerate">
+    </div>
 
-</div>
+    </div>
 
-<div class="positioning">
-<b-button class="button" v-on:click="back" ><i class="fa fa-caret-left" aria-hidden="true"></i>
- back </b-button>
-<b-button  class="button" v-on:click="checkinput" >go on <i class="fa fa-caret-right" aria-hidden="true"></i>
-</i>
-</b-button>
-</div>
+    <div class="positioning">
+    <b-button class="button" v-on:click="back" ><i class="fa fa-caret-left" aria-hidden="true"></i>
+     back </b-button>
+    <b-button  class="button" v-on:click="checkinput" >go on <i class="fa fa-caret-right" aria-hidden="true"></i>
+    </i>
+    </b-button>
+    </div>
 
 
   </div>
@@ -207,6 +208,11 @@ export default {
 </script>
 
 <style scoped>
+
+h1{
+  text-align: center;
+  margin-top: 20pt;
+}
 
 #capitalcheckbox{
   text-align: center;

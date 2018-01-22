@@ -5,18 +5,19 @@
 
     <div class="positioning">
       <h3>Paste your link here</h3>
-      <input id="linkbox" class="input" type="text" v-model="link"  placeholder="paste your link here"  value="localStorage.link">
+      <input id="linkbox" class="input" type="text" v-model="link"
+      placeholder="paste your link here"  value="localStorage.link">
     </div>
 
-    <div class="positioning" v-if="this.link != null ">
+   <div class="positioning" v-if="this.link != null ">
       <h3>Preview</h3>
-      <img class="shadow" alt="previewinsertedimg" :src="link" style="width: 500px; height: 300px; margin-top: 30pt;" />
+      <img class="shadow" alt="previewinsertedimg" :src="link" id="imgsize" />
+
     </div>
 
     <div class="positioning">
       <b-button class="button" v-on:click="back" > <i class="fa fa-caret-left" aria-hidden="true"/> back </b-button>
       <b-button class="button" v-on:click="checkinputs">Show Preview<i class="fa fa-check" aria-hidden="true"/></b-button>
-
     </div>
 
   </div>
@@ -95,4 +96,9 @@ export default {
   box-shadow: 8px 8px 10px #aaa;
 }
 
+#imgsize{
+  width: 500px;
+  height: 300px;
+  margin-top: 30pt;
+}
 </style>
