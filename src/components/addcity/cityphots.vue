@@ -9,7 +9,7 @@
       placeholder="paste your link here"  value="localStorage.link">
     </div>
 
-    <div class="positioning">
+   <div class="positioning">
       <h3>Preview</h3>
       <img class="shadow" :src="link" id="imgsize" />
     </div>
