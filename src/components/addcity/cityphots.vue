@@ -10,7 +10,7 @@
 
     <div class="positioning">
       <h3>Preview</h3>
-      <img class="shadow" :src="link" style="width: 500px; height: 300px; margin-top: 30pt;" />
+      <img class="shadow" alt="previewinsertedimg" :src="link" style="width: 500px; height: 300px; margin-top: 30pt;" />
     </div>
 
     <!-- <div style="margin-top:100px;">

@@ -72,10 +72,13 @@ export default {
 
     },
     loggedIn() {
+      if(window.sessionStorage.citypediatoken != null && window.sessionStorage.citypediatoken != ""){
+          this.user = window.sessionStorage.citypediaUser;
+          return (this.user != "");
+      } 
       this.$http.post("http://localhost:3000/api/userauth", {}, {headers: {Authorization: window.sessionStorage.citypediatoken}})
       .then(response => {
-        console.log(response.body);
-        if(response.body = null) console.log("no cancer");
+        if(response.body = null) return false;
         if (response.body.loggedin == true){
           console.log("Logged in");
           return true;

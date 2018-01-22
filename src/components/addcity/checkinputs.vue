@@ -16,7 +16,7 @@
     <li><span><h3>Area: {{area}}</h3></span> <br /></li>
     <hr />
 
-    <li><span><img :src="link" alt="image" style="width: 350px; height: 250px; margin-right: 60px; box-shadow: 8px 8px 10px #aaa;"></img></span> <br /></li>
+    <li><span><img :src="link" alt="insertedimage" style="width: 350px; height: 250px; margin-right: 60px; box-shadow: 8px 8px 10px #aaa;"></img></span> <br /></li>
 
   </ul>
 
@@ -99,7 +99,7 @@ export default {
 
   checkinputs: function(event){
     if(event){
-      $.post("http://localhost:3000/api/cities", {cityname: localStorage.getItem("cityname"), country: localStorage.getItem("country"), population: localStorage.getItem("population"), area: localStorage.getItem("area"),
+      this.$http.post("http://localhost:3000/api/cities", {cityname: localStorage.getItem("cityname"), country: localStorage.getItem("country"), population: localStorage.getItem("population"), area: localStorage.getItem("area"),
               avgtemp: localStorage.getItem("avgtemp"), nou: localStorage.getItem("nou"), urate: localStorage.getItem("urate"), isCapital: localStorage.getItem("isCapital"), hasLakes: localStorage.getItem("hasLakes"), hasTrainstation: localStorage.getItem("hasTrainstation"), link: localStorage.getItem("link")})
               localStorage.clear();
               document.location.href="/";

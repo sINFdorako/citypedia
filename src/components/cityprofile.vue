@@ -4,7 +4,7 @@
   <div>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-    <h1 style="text-align: center; margin-top: 50pt; font-family: 'Lobster', cursive;">{{cityname}} <img style="height: 30px;" :src="countrydata[0].flag"/> </h1>
+    <h1 style="text-align: center; margin-top: 50pt; font-family: 'Lobster', cursive;">{{cityname}} <img style="height: 30px;" alt="flag" :src="countrydata[0].flag"/> </h1>
 
     <hr />
     <div class="firstdiv" >

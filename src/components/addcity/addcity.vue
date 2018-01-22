@@ -22,9 +22,11 @@ export default {
     };
   },
   created: function(){
+    //TODO CHECK IF USER IS LOGGED IN
     //Put localstorage cityname to input
     $(document).ready(function(){
       $('#inputField').val(localStorage.cityname);
+
     });
 },
   mounted: function(){

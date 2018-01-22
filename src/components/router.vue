@@ -22,24 +22,24 @@
 export default {
   name: 'app',
 
-  created: function(){
-    this.$http.get('http://localhost:3000/api/city/'+this.$route.params.cityname)
-    .then(function(resp) {
-      this.city = resp.body;
-    })
-    .catch(function(err) {
-      this.cities = "Something went wrong: " +err
-    })
-
-},
-  data:
-  function(){
-    return {
-      cityname: this.$route.params.cityname,
-      city: []
-    };
-  },
-}
+//   created: function(){
+//     this.$http.get('http://localhost:3000/api/city/'+this.$route.params.cityname)
+//     .then(function(resp) {
+//       this.city = resp.body;
+//     })
+//     .catch(function(err) {
+//       this.cities = "Something went wrong: " +err
+//     })
+//
+// },
+//   data:
+//   function(){
+//     return {
+//       cityname: this.$route.params.cityname,
+//       city: []
+//     };
+//   },
+ }
 
 </script>
 
