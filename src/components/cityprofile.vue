@@ -102,20 +102,20 @@ h1{
 }
 
 #firstimage {
-   width: 650px;
+   width: 350px;
    box-shadow: 8px 8px 10px #aaa;
 }
 
 .firstdiv{
   margin-top: 25pt;
   float: left;
-  margin-left: 2%;
+  margin-left: 6em;
 
 }
 
 .seconddiv{
   float: right;
-  margin-right: 2%;
+  margin-right: 6em;
 }
 
 strong {
