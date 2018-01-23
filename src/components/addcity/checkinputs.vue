@@ -6,8 +6,8 @@
       <h1 class="positioning">Are your inputs about {{input}} correct?</h1>
       <div style="margin-top:20pt;">
       <h2 class="h2first">required inputs</h2>
-      
-      
+
+
       <div class="positioning, box" >
 
 
@@ -105,9 +105,10 @@ export default {
   checkinputs: function(event){
     if(event){
       this.$http.post("http://localhost:3000/api/cities", {cityname: localStorage.getItem("cityname"), country: localStorage.getItem("country"), population: localStorage.getItem("population"), area: localStorage.getItem("area"),
-              avgtemp: localStorage.getItem("avgtemp"), nou: localStorage.getItem("nou"), urate: localStorage.getItem("urate"), isCapital: localStorage.getItem("isCapital"), hasLakes: localStorage.getItem("hasLakes"), hasTrainstation: localStorage.getItem("hasTrainstation"), link: localStorage.getItem("link")})
-              localStorage.clear();
-              document.location.href="/";
+              avgtemp: localStorage.getItem("avgtemp"), nou: localStorage.getItem("nou"), urate: localStorage.getItem("urate"), isCapital: localStorage.getItem("isCapital"), hasLakes: localStorage.getItem("hasLakes"), hasTrainstation: localStorage.getItem("hasTrainstation"), link: localStorage.getItem("link")}).then((respnonse) => {
+                localStorage.clear();
+                document.location.href="/";
+              });
     }
   }
 }
