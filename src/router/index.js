@@ -73,17 +73,20 @@ export default new Router({
       path: '/citydetails/:input',
       name: 'citydetails',
       component: citydetails
+      beforeEnter: checkIfLoggedIn
 
     },
     {
       path: '/citydetails/cityphots/:input',
       name: 'cityphots',
       component: cityphots
+      beforeEnter: checkIfLoggedIn
     },
     {
       path: '/citydetails/cityphots/checkinputs/:input',
       name: 'checkinputs',
       component: checkinputs
+      beforeEnter: checkIfLoggedIn
     },
     {
       path: '/citycard',
