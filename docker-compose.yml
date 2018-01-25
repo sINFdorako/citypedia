@@ -1,20 +1,23 @@
-version: "1"
+version: "3"
 services:
   app:
-    container_name: citypedia   # arbitrary name
-    restart: always               # restart container on service startup?
-    build: .                      # build container from .
-    ports:
-      - "8000:8000"               # expose default node port
-    links:
-      - mongo                     # provide network access to `mongo`
-  mongo:
-    container_name: 2f4fc745d304
-    image: mongo
-    ports:
-      - "27017:27017"                 # use existing image `mongo`
+      container_name: citypedia
+      restart: always
+      build: .
+      ports:
+        - "8000:8000"
+
+  citypedia-db:
+      container_name: citypedia-db
+      image: mongo
+      ports:
+        - "27017:27017"
 
   citypedia_api:
-    container_name: 24ed192b6733
-    image: citypedia_api
-    volumes: ../citypedia-db
+      container_name: api
+      image: citypedia_api
+      build: ../citypedia-db/
+      links:
+        - citypedia-db
+      ports:
+        - "3000:3000"
