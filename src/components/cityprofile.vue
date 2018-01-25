@@ -102,7 +102,7 @@ h1{
 }
 
 #firstimage {
-   width: 350px;
+   width: 40em;
    box-shadow: 8px 8px 10px #aaa;
 }
 
